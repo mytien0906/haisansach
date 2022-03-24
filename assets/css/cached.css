@@ -36061,13 +36061,80 @@ div.menu_mobi, div.menu_mobi_add {
     width: 50px;
     border-radius: 50%;
 }
+.tab-content-2 {
+    border: 0 !important;
+    border-top: 0 !important;
+}
 .tab-content-2 .col-md-3{
     padding: 5px 5px;
 }
 .cover-content{
+    font-family: 'Roboto', sans-serif;
     padding: 5px;
-    border: 1px solid #00a249;
-    height: 225px;
+}
+.cover-content .image{
+    display: block;
+}
+.cover-content h6{
+    font-size: 1.5em;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: capitalize;
+    line-height: 40px;
+}
+.cover-content img{
+    border-radius: 5px;
+}
+.cover-content .des-tab {
+    color: #9ca3af;
+    font-weight: 400;
+    text-align:left;
+}
+.cover-content .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.cover-content .price div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+}
+.cover-content .price div p {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ff413e;
+    margin-bottom: 0;
+}
+.cover-content .price div p.price-discount {
+    text-decoration: line-through;
+    color: #717171;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 2px;
+    margin-left: 7px;
+}
+.cover-content .discount {
+    color: #fff;
+    font-size: .9em;
+    font-weight: 400;
+    background-color: #ff413e;
+    border-radius: 10px;
+    padding: 4px 8px;
+}
+.cover-content .buy {
+    color: #fff;
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    border: 0;
+    border-radius: 50px;
+    background-color: var(--bg-color);
+    padding: 12px;
+    margin-top: 10px;
 }
 .see-more{
     padding: 10px 10px;
@@ -36206,6 +36273,7 @@ div.menu_mobi, div.menu_mobi_add {
     margin-top: 20px
 }
 .tabbed-content {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-flow: row wrap;
 }
@@ -36213,6 +36281,17 @@ div.menu_mobi, div.menu_mobi_add {
     border: 0;
     justify-content: center;
 }
+.tabbed-content .nav-link, .tabbed-content .nav-link.active{
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: transparent !important;
+}
+.tabbed-content .nav-link.active {
+    border-bottom: 3px solid #000;
+ }
 .tabbed-content .nav, .tabbed-content .tab-panels {
     width: 100%;
 }
@@ -36268,8 +36347,6 @@ element.style {
         background-color: #afafaf;
         padding-left: 15px !important;
         padding-right: 15px !important;
-        color: #fff;
-        text-transform: uppercase;
     }
     a {
         color: inherit;
