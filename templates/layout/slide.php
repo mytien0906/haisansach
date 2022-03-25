@@ -2,7 +2,7 @@
 <?php if (count($slider)) { ?>
     <div class="wrap_slider">
         <div class=" d-flex justify-content-between display-blocks">
-            <div class="catagory-list">
+            <!-- <div class="catagory-list">
                 <?php if ($splistmenu) { ?>
                     <ul>
                         <?php foreach ($splistmenu as $c => $cat) { ?>
@@ -21,11 +21,11 @@
                         <?php } ?>
                     </ul>
                 <?php } ?>
-                <!-- <div class="frm_timkiem">
+                <div class="frm_timkiem">
                     <input type="text" class="input" id="keyword" placeholder="Tìm kiếm" onkeypress="doEnter(event,'keyword');" >
                     <button type="submit" value="" class="nut_tim" onclick="onSearch('keyword');"><i class="far fa-search"></i></button>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
             <div class="slideshow">
                 <div class="autoplay">
                     <?php foreach ($slider as $v) { ?>

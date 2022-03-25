@@ -1,3 +1,18 @@
+<style>
+    .temmp {
+        position: absolute;
+        right: -100%;
+        width: 100%;
+        top: 100%;
+        transition: all ease 0.5s;
+        z-index: 99;
+        display: none;
+    }
+
+    .menu_cap_con:hover .temmp {
+        display: block;
+    }
+</style>
 <div class="header-cachtop">
 
 
@@ -34,76 +49,83 @@
             </div>
         </div>
         <div class="bottom-header" id="myHeader">
-        <div class="fixwidth d-flex justify-content-between flex-wrap">
-            <div class="header_left align-self-center">
-                <a class="header_logo" href=""><img onerror="this.src='<?= THUMBS ?>/0x100x2/assets/images/noimage.png';" src="<?= THUMBS ?>/0x100x2/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" /></a>
+            <div class="fixwidth d-flex justify-content-between flex-wrap">
+                <div class="header_left align-self-center">
+                    <a class="header_logo" href=""><img onerror="this.src='<?= THUMBS ?>/0x100x2/assets/images/noimage.png';" src="<?= THUMBS ?>/0x100x2/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" /></a>
 
-            </div>
+                </div>
 
-            <div class="boxmenu_right d-flex align-self-center justify-content-between flex-wrap">
-                <div class="menu">
+                <div class="boxmenu_right d-flex align-self-center justify-content-between flex-wrap">
+                    <div class="menu">
 
-                    <ul class="menu_cap_cha d-flex justify-content-center">
-                        <li class="menulicha <?= $source == 'index' ? 'active' : '' ?>"><a href="" title="TRANG CHỦ">Trang chủ</a></li>
-                        <li class="menulicha <?= $com == 'gioi-thieu' ? 'active' : '' ?>"><a href="gioi-thieu" title="GIỚI THIỆU">Giới thiệu
+                        <ul class="menu_cap_cha d-flex justify-content-center">
+                            <li class="menulicha <?= $source == 'index' ? 'active' : '' ?>"><a href="" title="TRANG CHỦ">Trang chủ</a></li>
+                            <li class="menulicha <?= $com == 'gioi-thieu' ? 'active' : '' ?>"><a href="gioi-thieu" title="GIỚI THIỆU">Giới thiệu
+                                    <?php if ($gtlistmenu) { ?>
+                                        <i class="desktop-li fal fa-angle-down"></i>
+                                    <?php } ?>
+                                </a>
                                 <?php if ($gtlistmenu) { ?>
-                                    <i class="desktop-li fal fa-angle-down"></i>
+                                    <ul class="menu_cap_con">
+                                        <?php foreach ($gtlistmenu as $c => $cat) { ?>
+                                            <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a>
+                                                <ul class="temmp">
+                                                    <li><a href="">hello</a></li>
+                                                    <li><a href="">hello</a></li>
+                                                    <li><a href="">hello</a></li>
+                                                    <li><a href="">hello</a></li>
+                                                </ul>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
                                 <?php } ?>
-                            </a>
-                            <?php if ($gtlistmenu) { ?>
-                                <ul class="menu_cap_con">
-                                    <?php foreach ($gtlistmenu as $c => $cat) { ?>
-                                        <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            <?php } ?>
-                        </li>
+                            </li>
 
-                        <li class="menulicha <?= $com == 'nha-mau' ? 'active' : '' ?>"><a href="nha-mau" title="NHÀ MẪU">Khuyến mãi
+                            <li class="menulicha <?= $com == 'nha-mau' ? 'active' : '' ?>"><a href="nha-mau" title="NHÀ MẪU">Khuyến mãi
+                                    <?php if ($splistmenuhouse) { ?>
+                                        <i class="desktop-li fal fa-angle-down"></i>
+                                    <?php } ?>
+                                </a>
                                 <?php if ($splistmenuhouse) { ?>
-                                    <i class="desktop-li fal fa-angle-down"></i>
+                                    <ul class="menu_cap_con">
+                                        <?php foreach ($splistmenuhouse as $c => $cat) { ?>
+                                            <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
+                                        <?php } ?>
+                                    </ul>
                                 <?php } ?>
-                            </a>
-                            <?php if ($splistmenuhouse) { ?>
-                                <ul class="menu_cap_con">
-                                    <?php foreach ($splistmenuhouse as $c => $cat) { ?>
-                                        <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            <?php } ?>
-                        </li>
+                            </li>
 
-                        <li class="menulicha <?= $com == 'dich-vu' ? 'active' : '' ?>"><a href="dich-vu" title="DỊCH VỤ">Dịch vụ
+                            <li class="menulicha <?= $com == 'dich-vu' ? 'active' : '' ?>"><a href="dich-vu" title="DỊCH VỤ">Dịch vụ
+                                    <?php if ($dvlistmenu) { ?>
+                                        <i class="desktop-li fal fa-angle-down"></i>
+                                    <?php } ?>
+                                </a>
                                 <?php if ($dvlistmenu) { ?>
-                                    <i class="desktop-li fal fa-angle-down"></i>
+                                    <ul class="menu_cap_con">
+                                        <?php foreach ($dvlistmenu as $c => $cat) { ?>
+                                            <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
+                                        <?php } ?>
+                                    </ul>
                                 <?php } ?>
-                            </a>
-                            <?php if ($dvlistmenu) { ?>
-                                <ul class="menu_cap_con">
-                                    <?php foreach ($dvlistmenu as $c => $cat) { ?>
-                                        <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
+                            </li>
+                            <li class="menulicha <?= $com == 'tin-tuc' ? 'active' : '' ?>"><a href="tin-tuc" title="TIN TỨC">Tin tức
+                                    <?php if ($ttlistmenu) { ?>
+                                        <i class="desktop-li fal fa-angle-down"></i>
                                     <?php } ?>
-                                </ul>
-                            <?php } ?>
-                        </li>
-                        <li class="menulicha <?= $com == 'tin-tuc' ? 'active' : '' ?>"><a href="tin-tuc" title="TIN TỨC">Tin tức
+                                </a>
                                 <?php if ($ttlistmenu) { ?>
-                                    <i class="desktop-li fal fa-angle-down"></i>
+                                    <ul class="menu_cap_con">
+                                        <?php foreach ($ttlistmenu as $c => $cat) { ?>
+                                            <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
+                                        <?php } ?>
+                                    </ul>
                                 <?php } ?>
-                            </a>
-                            <?php if ($ttlistmenu) { ?>
-                                <ul class="menu_cap_con">
-                                    <?php foreach ($ttlistmenu as $c => $cat) { ?>
-                                        <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            <?php } ?>
-                        </li>
-                        <li class="menulicha <?= $com == 'lien-he' ? 'active' : '' ?>"><a href="lien-he" title="LIÊN HỆ">Liên hệ</a></li>
-                    </ul>
+                            </li>
+                            <li class="menulicha <?= $com == 'lien-he' ? 'active' : '' ?>"><a href="lien-he" title="LIÊN HỆ">Liên hệ</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </div>
