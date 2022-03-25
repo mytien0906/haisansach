@@ -6,7 +6,7 @@
         top: 100%;
         transition: all ease 0.5s;
         z-index: 99;
-        display: none;
+        /* display: none; */
     }
 
     .menu_cap_con:hover .temmp {

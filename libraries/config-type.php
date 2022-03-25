@@ -39,7 +39,8 @@
         "gioi-thieu" => "Giới thiệu",
         "nha-mau" => "Nhà mẫu",
         "dich-vu" => "Dịch vụ",        
-        "tin-tuc" => "Tin tức",        
+        "tin-tuc" => "Tin tức", 
+        "tieu-chi" => "Tiêu chí",       
         "lien-he" => "Liên hệ",
         "tinh-gia-xay-dung" => "Tính giá xây dựng",        
         "huong-mau-sac" => "Hướng màu sắc",        
@@ -60,6 +61,9 @@
     $config['setting']['website'] = true;
     $config['setting']['fanpage'] = true;
     $config['setting']['toado'] = true;
+    $config['setting']['tiktok'] = true;
+    $config['setting']['instagram'] = true;
+    $config['setting']['youtube'] = true;
     $config['setting']['slogan'] = false;
     $config['setting']['giolam'] = true;
     $config['setting']['toado_iframe'] = true;

@@ -17,7 +17,7 @@
     $config['photo']['photo_static'][$nametype]['height'] = 180;
     $config['photo']['photo_static'][$nametype]['thumb'] = '200x180x2';
     $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
-
+    
     /* Logo 
     $nametype = "baner";
     $config['photo']['photo_static'][$nametype]['title_main'] = "Baner";
@@ -50,8 +50,23 @@
     $config['photo']['man_photo'][$nametype]['height_photo'] = 380;
     $config['photo']['man_photo'][$nametype]['thumb_photo'] = '200x100x1';
     $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
-
  
+    // Banner tieu chi
+    $nametype = "tieu-chi";
+    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Tiêu chí";
+    $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
+    $config['photo']['man_photo'][$nametype]['images_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['link_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['mota_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['width_photo'] = 910;
+    $config['photo']['man_photo'][$nametype]['height_photo'] = 380;
+    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '200x100x1';
+    $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+ 
+
+
     /* Slideshow */
     $nametype = "mxh";
     $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Mạng xã hội";
@@ -95,14 +110,14 @@
     $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
   
     /* Background */
-    $nametype = "background-tieuchi";
-    $config['photo']['photo_static'][$nametype]['title_main'] = "Background thống kê";
-    $config['photo']['photo_static'][$nametype]['images'] = true;
-    $config['photo']['photo_static'][$nametype]['background'] = true;
-    $config['photo']['photo_static'][$nametype]['width'] = 1366;
-    $config['photo']['photo_static'][$nametype]['height'] = 300;
-    $config['photo']['photo_static'][$nametype]['thumb'] = '1366x300x1';
-    $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+    // $nametype = "background-tieuchi";
+    // $config['photo']['photo_static'][$nametype]['title_main'] = "Background thống kê";
+    // $config['photo']['photo_static'][$nametype]['images'] = true;
+    // $config['photo']['photo_static'][$nametype]['background'] = true;
+    // $config['photo']['photo_static'][$nametype]['width'] = 1366;
+    // $config['photo']['photo_static'][$nametype]['height'] = 300;
+    // $config['photo']['photo_static'][$nametype]['thumb'] = '1366x300x1';
+    // $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
  
     /* Background
     $nametype = "background-footer";
@@ -170,6 +185,3 @@
     $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
     $config['photo']['man_photo'][$nametype]['video_photo'] = true;
     $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
-
-     
-?>

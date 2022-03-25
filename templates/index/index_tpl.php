@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+<!-- San pham moi nhat -->
 <div class="new-product">
     <div class="fixwidth">
         <div class="tabbed-content">
@@ -38,6 +39,7 @@ session_start();
         </div>
     </div>
 </div>
+<!-- San pham noi bat -->
 <div class="new-product">
     <div class="fixwidth">
         <div class="tabbed-content">
@@ -76,6 +78,7 @@ session_start();
         </div>
     </div>
 </div>
+<!-- Danh muc -->
 <div class="category-block">
     <div class="tabbed-content">
         <h3>Danh mục</h3>
@@ -97,8 +100,21 @@ session_start();
         <?php } ?>
     </div>
 </div>
-
-
+<!-- Banner tieu chi -->
+<div class="banner-tieu-chi">
+    <div class="fixwidth">
+        <div class="row">
+            <?php foreach ($criteria_list as $key => $value) { ?>
+                
+                <div class="col-md-3">
+                        <a href="" class="link-tieu-chi">
+                            <img src="/upload/photo/<?= $value['photo'] ?>" alt="">
+                        </a>
+                </div>
+        <?php } ?>
+        </div>
+    </div>
+</div>
 
 
 <!-- <div class="box-thongke-container" id="background-thong-ke">

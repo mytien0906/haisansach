@@ -35172,21 +35172,50 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .boxfooter_container {
     color: #fff;
     position: relative;
-    background: rgb(15, 20, 22);
+    background: url('/upload/photo/images.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 50px 0;
     font-size: 15px;
 }
 
+.boxfooter_container .title,.slogan-text {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
 .boxfooter_container .fixwidth {}
 
-.footer_name {
-    font-family: 'UTM HelvetIns';
-    font-size: 45px;
-    color: #00cc00;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 20px;
+.footer-list a,p.hotline {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
+
+.footer-list a:hover {
+    text-decoration: underline !important;
+    color: #FFF;
+}
+
+.icon-block ul {
+    display: flex;
+    /* justify-content: space-around; */
+    margin-top: 15px;
+}
+.icon-block ul li{margin-right: 8px;}
+.icon-block a {
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+}
+
+.icon-block svg {
+    fill: #fff
+}
+.slogan{
+    display: flex;
+    align-items: center;
+}
+.slogan .title{padding-left: 7px;}
 
 .boxfooter_left {
     width: 30%;
@@ -36007,20 +36036,25 @@ coccocgrammar {
 }
 
 .scrollToTop {
-    width: 41px;
-    height: 41px;
+    width: 45px;
+    height: 45px;
     text-align: center;
     font-weight: bold;
     color: #444;
     text-decoration: none;
     position: fixed;
-    bottom: 30px;
-    right: 15px;
+    bottom: 105px;
+    right: 76px;
     display: none;
     z-index: 10;
     cursor: pointer;
+    background: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
 }
-
+.scrollToTop svg{    fill: #fff;
+    width: 40%;}
 .text-split {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -36155,10 +36189,12 @@ div.menu_mobi, div.menu_mobi_add {
     display: block;
     transition: opacity 0.4s ease-in-out;
 }
-.cover-content:hover{
+
+.cover-content:hover img{
     background-color: var(-bg-color);
     opacity: .8;
 }
+
 .cover-content h6 {
     /* font-size: 1.5em;
     font-weight: 500;
@@ -36183,20 +36219,23 @@ div.menu_mobi, div.menu_mobi_add {
     border-radius: 5px;
     width: 100%;
 }
-.category-block .cover-content img{
+
+.category-block .cover-content img {
     height: 337px !important;
     object-fit: cover;
 }
-.product-name{
+
+.product-name {
     position: absolute;
     bottom: 30px;
     left: calc(50% - 75px);
 }
 
-.product-name h6{
+.product-name h6 {
     color: #fff;
     font-size: 2rem;
 }
+
 .cover-content .des-tab {
     color: #9ca3af;
     font-weight: 400;
@@ -36283,6 +36322,12 @@ div.menu_mobi, div.menu_mobi_add {
 .cover-content .buy:focus {
     opacity: 0.9;
     outline: none;
+}
+
+/* CSS 25/03 */
+.banner-tieu-chi {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .see-more {

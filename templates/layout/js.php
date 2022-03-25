@@ -189,7 +189,7 @@ echo $js->getJs();
     });
     $(document).ready(function() {
 
-        $('.support-content').hide();
+        // $('.support-content').hide();
 
         $('a.btn-support').click(function(e) {
             e.stopPropagation();

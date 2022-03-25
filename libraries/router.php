@@ -97,6 +97,7 @@
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
 		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc",'menu'=>true),
+		array("tbl"=>"","field"=>"id","source"=>"","com"=>"tieu-chi","type"=>"tieu-chi",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"dich-vu","type"=>"dich-vu",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"thong-tin","type"=>"thong-tin",'menu'=>false),
  
@@ -182,6 +183,13 @@
 			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
 			$type = $com;
 			$title_crumb = "Tin tức";
+			break;
+		case 'tieu-chi':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$title_crumb = "Tiêu chí";
 			break;
 
 		case 'thong-tin':
