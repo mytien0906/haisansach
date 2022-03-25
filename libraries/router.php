@@ -83,12 +83,11 @@
 
 	/* Tối ưu link */
 	$requick = array(
-		/* Sản phẩm
+		// Sản phẩm
 		array("tbl"=>"product_list","field"=>"idl","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		array("tbl"=>"product_cat","field"=>"idc","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		array("tbl"=>"product_item","field"=>"idi","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
-		array("tbl"=>"product","field"=>"id","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
-	  */
+	
 		/* Sản phẩm */
 		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"nha-mau","type"=>"nha-mau",'menu'=>true),
 	 	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"nha-mau","type"=>"nha-mau",'menu'=>true),
@@ -201,13 +200,13 @@
 			$title_crumb = "Dịch vụ";
 			break;
 
-		case 'nha-mau':
-			$source = "news";
-			$template = isset($_GET['id']) ? "duan/news_detail" : "duan/news";
-			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
-			$type = $com;
-			$title_crumb = "Nhà mẫu";
-			break;
+		// case 'nha-mau':
+		// 	$source = "news";
+		// 	$template = isset($_GET['id']) ? "duan/news_detail" : "duan/news";
+		// 	$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+		// 	$type = $com;
+		// 	$title_crumb = "Nhà mẫu";
+		// 	break;
 
 		case 'video':
 			$source = "video";

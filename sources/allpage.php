@@ -5,17 +5,26 @@
     $logo = $d->rawQueryOne("select id, photo from #_photo where type = ? and act = ? limit 0,1",array('logo','photo_static'));
 
 
-    $splistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('san-pham'));
-    $splistmenuhouse = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('nha-mau'));
-
+    
     $gtlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc",array('gioi-thieu'));
-
+    $splistmenuhouse = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('nha-mau'));
+    
     $dvlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc",array('dich-vu'));
     $ttlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('tin-tuc'));
     $nmlistmenu = $d->rawQuery("select ten$lang, type, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('nha-mau'));
-
+    
     $tht = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc",array('thong-tin'));
-
+    // New query
+    // $product_list = $d->rawQuery("select tenvi, type, tenkhongdauvi, id,photo from table_product_list where type = 'san-pham' and hienthi > 0 order by stt,id desc");
+    $splistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo,type from #_product_list where type = ? and hienthi > 0 order by stt,id desc",array('san-pham'));
+    // $splistmenu = $d->rawQuery("select #_product_list.id, #_product_list.tenvi, #_product_list.tenkhongdauvi, #_product_list.photo,
+    //  #_product_cat.id, #_product_cat.tenvi, #_product_cat.tenkhongdauvi, #_product_cat.photo 
+    //  FROM #_product_list RIGHT JOIN #_product_cat ON #_product_list.id = #_product_cat.id_list 
+    //  WHERE #_product_list.id = ? AND #_product_list.type = ?",array('san-pham'));
+    $newproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdauvi`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 ORDER BY id DESC limit 6",array('san-pham'));
+    $popularproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdauvi`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 and table_product.noibat>0 limit 8",array('san-pham'));
+    
+    // 24/03
    
  
     $footer = $d->rawQueryOne("select ten$lang, noidung$lang from #_static where type = ? limit 0,1",array('footer'));
@@ -205,4 +214,3 @@
             $func->transfer("Đăng ký nhận tin thất bại. Vui lòng thử lại sau.",$config_base, false);
         }
     }
-?>

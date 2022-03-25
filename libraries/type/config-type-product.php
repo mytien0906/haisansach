@@ -56,11 +56,11 @@
             "file_type_photo" => 'doc|docx|pdf|rar|zip|ppt|pptx|DOC|DOCX|PDF|RAR|ZIP|PPT|PPTX|xls|jpg|png|gif|JPG|PNG|GIF|xls|XLS'
         )*/
     );
-    $config['product'][$nametype]['ma'] = true;
+    $config['product'][$nametype]['ma'] = false;
     $config['product'][$nametype]['gia'] = true;
-    $config['product'][$nametype]['giamoi'] = false;
-    $config['product'][$nametype]['giakm'] = false;
-    $config['product'][$nametype]['motangan'] = false;
+    $config['product'][$nametype]['giamoi'] = true;
+    $config['product'][$nametype]['giakm'] = true;
+    $config['product'][$nametype]['motangan'] = true;
     $config['product'][$nametype]['motangan_cke'] = false;
     $config['product'][$nametype]['mota'] = true;
     $config['product'][$nametype]['mota_cke'] = true;
