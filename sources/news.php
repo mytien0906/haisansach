@@ -42,7 +42,8 @@
 		$per_page = 8;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
-		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
+		// $sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
+		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc";
 		$news = $d->rawQuery($sql,$params);
 		$sqlNum = "select count(*) as 'num' from #_news where $where order by stt,id desc";
 		$count = $d->rawQueryOne($sqlNum,$params);

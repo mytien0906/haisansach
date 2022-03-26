@@ -143,7 +143,7 @@
                                         $sql = "select id,(select tenvi from #_news_list where id=".$items[$i]['id_list'].") as namelist,(select tenvi from #_news_cat where id=".$items[$i]['id_cat'].") as namecat,(select tenvi from #_news_item where id=".$items[$i]['id_item'].") as nameitem from #_news where id=".$items[$i]['id']." ";
                                         $itemcat = $d->rawQueryOne($sql);
                                          ?>
-                                <?=$itemcat['namelist']!='' ? '<span class="text-primary">'.$itemcat['namelist'].'</span>':''?>
+                                <!-- <?=$itemcat['namelist']!='' ? '<span class="text-primary">'.$itemcat['namelist'].'</span>':''?> -->
                                 <?=$itemcat['namecat']!='' ? ' <i class="far fa-angle-right"></i> <span class="text-info">'.$itemcat['namecat'].'</span>':''?>
                                 <?=$itemcat['nameitem']!='' ? ' <i class="far fa-angle-right"></i> <span class="text-danger">'.$itemcat['nameitem'].'</span>':''?>
                             </div>

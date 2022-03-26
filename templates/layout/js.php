@@ -191,16 +191,16 @@ echo $js->getJs();
 
         // $('.support-content').hide();
 
-        $('a.btn-support').click(function(e) {
-            e.stopPropagation();
-            $('.support-content').slideToggle();
-        });
-        $('.support-content').click(function(e) {
-            e.stopPropagation();
-        });
-        $(document).click(function() {
-            $('.support-content').slideUp();
-        });
+        // $('a.btn-support').click(function(e) {
+        //     e.stopPropagation();
+        //     $('.support-content').slideToggle();
+        // });
+        // $('.support-content').click(function(e) {
+        //     e.stopPropagation();
+        // });
+        // $(document).click(function() {
+        //     $('.support-content').slideUp();
+        // });
 
         $('.tailvideo_item_owl').click(function() {
             let id = $(this).attr('data-src');

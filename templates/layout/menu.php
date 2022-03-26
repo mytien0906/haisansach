@@ -6,7 +6,7 @@
         top: 100%;
         transition: all ease 0.5s;
         z-index: 99;
-        /* display: none; */
+        display: none;
     }
 
     .menu_cap_con:hover .temmp {
@@ -54,10 +54,16 @@
                     <a class="header_logo" href=""><img onerror="this.src='<?= THUMBS ?>/0x100x2/assets/images/noimage.png';" src="<?= THUMBS ?>/0x100x2/<?= UPLOAD_PHOTO_L . $logo['photo'] ?>" /></a>
 
                 </div>
-
+                <div class="menu_mobi_add"></div>
+                    <div class="menu_mobi align-self-center">
+                        <p class="icon_menu_mobi"><i class="fas fa-bars"></i></p>
+                        <p class="menu_baophu"></p>
+                        <a href="" class="home_mobi">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 <div class="boxmenu_right d-flex align-self-center justify-content-between flex-wrap">
                     <div class="menu">
-
                         <ul class="menu_cap_cha d-flex justify-content-center">
                             <li class="menulicha <?= $source == 'index' ? 'active' : '' ?>"><a href="" title="TRANG CHỦ">Trang chủ</a></li>
                             <li class="menulicha <?= $com == 'gioi-thieu' ? 'active' : '' ?>"><a href="gioi-thieu" title="GIỚI THIỆU">Giới thiệu

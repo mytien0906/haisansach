@@ -103,8 +103,8 @@
     /* tin tức */
     $nametype = "tin-tuc";
     $config['news'][$nametype]['title_main'] = "Tin tức";
-    $config['news'][$nametype]['dropdown'] = true;
-    $config['news'][$nametype]['list'] = true;
+    $config['news'][$nametype]['dropdown'] = false;
+    $config['news'][$nametype]['list'] = false;
     $config['news'][$nametype]['check'] = array('noibat'=>'Nổi bật');
     $config['news'][$nametype]['view'] = true;
     $config['news'][$nametype]['slug'] = true;
