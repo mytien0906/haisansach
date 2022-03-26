@@ -35,7 +35,7 @@
 			'host' => 'localhost',
 			'username' => 'root',
 			'password' => '',
-			'dbname' => 'stgr120928_db',
+			'dbname' => 'haisan_sota',
 			'port' => 3306,
 			'prefix' => 'table_',
 			'charset' => 'utf8'
