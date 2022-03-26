@@ -24,7 +24,6 @@
 	$sql = "select ten$lang, tenkhongdauvi, id, photo,mota$lang  from #_news where type='cong-trinh' $where and noibat > 0 and hienthi > 0 order by stt,id desc";
 	$sqlCache = $sql." limit $start, $pagingAjax->perpage";
     $items = $cache->getCache($sqlCache,'result',7200);
-
 	/* Count all data */
 	$countItems = count($cache->getCache($sql,'result',7200));
 

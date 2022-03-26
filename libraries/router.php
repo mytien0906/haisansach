@@ -184,6 +184,20 @@
 			$type = $com;
 			$title_crumb = "Tin tức";
 			break;
+		case 'goc-am-thuc':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$title_crumb = "Góc ẩm thực";
+			break;
+		case 'tuyen-dung':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$title_crumb = "Tuyển dụng";
+			break;
 		case 'tieu-chi':
 			$source = "news";
 			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
@@ -224,13 +238,14 @@
 			$title_crumb = "Video";
 			break;
  
-		/*case 'san-pham':
+		case 'san-pham':
 			$source = "product";
 			$template = isset($_GET['id']) ? "product/product_detail" : "product/product";
-			$seo->setSeo('type','article');
-			$type = 'san-pham';
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
 			$title_crumb = 'Sản phẩm';
-			break;*/
+			break;
+		
  	 
 		case 'tim-kiem':
 			$source = "search";

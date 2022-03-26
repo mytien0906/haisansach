@@ -117,11 +117,12 @@
 		$params = array($idl,$type);
 
 		$curPage = $get_page;
-		$per_page = 12;
+		$per_page = 2;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
-		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
-		$news = $d->rawQuery($sql,$params);
+
+		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc limit 1";
+		$news= $d->rawQuery($sql,$params);
 		$sqlNum = "select count(*) as 'num' from #_news where $where order by stt,id desc";
 		$count = $d->rawQueryOne($sqlNum,$params);
 		$total = $count['num'];
@@ -337,13 +338,13 @@
 			}
 		}
 
-		/* Lấy tất cả bài viết */
+		/* Lấy tất cả bài viết trang tin tuc */
 		$where = "";
 		$where = "type = ? and hienthi > 0";
 		$params = array($type);
 
 		$curPage = $get_page;
-		$per_page = 12;
+		$per_page = 3;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
 		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
@@ -352,7 +353,7 @@
 		$count = $d->rawQueryOne($sqlNum,$params);
 		$total = $count['num'];
 		$url = $func->getCurrentPageURL();
-		$paging = $func->pagination($total,$per_page,$curPage,$url);
+		$pagingaa = $func->pagination($total,$per_page,$curPage,$url);
 
 		/* breadCrumbs */
 		if(isset($title_crumb) && $title_crumb != '') $breadcr->setBreadCrumbs($com,$title_crumb);

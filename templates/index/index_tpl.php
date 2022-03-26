@@ -12,10 +12,11 @@ session_start();
             foreach ($newproduct as $key => $value) {
             ?>
                 <div class="col-2 cover-content">
-                    <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
+
+                    <a href="<?= $value[$sluglang]?>" class="image">
                         <img src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
-                    <a href="$value['tenkhongdauvi']">
+                    <a href="<?php  echo $value['tenkhongdauvi']?>">
                         <h6><?= $value["tenvi"] ?></h6>
                     </a>
                     <?php if ($value['motanganvi']) { ?>
