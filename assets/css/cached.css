@@ -35200,7 +35200,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .footer-list a, p.hotline {
     font-size: 1.2rem;
     /* font-weight: 500; */
-    color:#fff;
+    color: #fff;
 }
 
 .footer-list a:hover {
@@ -35236,7 +35236,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .slogan .title {
     padding-left: 7px;
-    color:#fff;
+    color: #fff;
 }
 
 .boxfooter_left {
@@ -35520,7 +35520,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     text-align: center;
     margin-right: 2%;
     background: white; */
-    flex:3;
+    flex: 3;
 }
 
 .left-pro-detail .MagicZoom {
@@ -35532,11 +35532,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .right-pro-detail {
     /* width: 49%;
     float: right; */
-    flex:3
+    flex: 3;
+    margin-left: 30px;
 }
-.right-pro-detail .wrap{
+
+.right-pro-detail .wrap {
     display: flex;
 }
+
 .gallery-thumb-pro {
     position: relative;
     margin-top: 10px;
@@ -35594,6 +35597,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     margin: 0px 5px 0px 0px;
     min-width: 95px;
     display: inline-block;
+    font-size: 1.25em;
+    font-weight: 600;
 }
 
 .attr-label-pro-detail.d-block {
@@ -35953,16 +35958,20 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .top-contact .article-contact {
     width: 48%;
 }
-.top-contact .article-contact .tabbed-content{
+
+.top-contact .article-contact .tabbed-content {
     text-align: left;
     padding-bottom: 15px;
 }
+
 .form-contact {
     width: 47%;
 }
-.pl-110{
+
+.pl-110 {
     padding-left: 80px;
 }
+
 .input-contact {
     position: relative;
     margin-bottom: 15px;
@@ -36288,11 +36297,11 @@ div.menu_mobi, div.menu_mobi_add {
 .cover-content .price div {
     display: flex;
     flex-wrap: wrap;
-    align-items: end;
+    align-items: center;
 }
 
 .cover-content .price div p {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 700;
     color: #ff413e;
     margin-bottom: 0;
@@ -36301,7 +36310,7 @@ div.menu_mobi, div.menu_mobi_add {
 .cover-content .price div p.price-discount {
     text-decoration: line-through;
     color: #717171;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-weight: 500;
     /* margin-bottom: 2px; */
     margin-left: 7px;
@@ -36314,6 +36323,7 @@ div.menu_mobi, div.menu_mobi_add {
     background-color: #ff413e;
     border-radius: 10px;
     padding: 4px 8px;
+    margin-left: 8px;
 }
 
 .cover-content .product-des-wrap {
@@ -36358,6 +36368,14 @@ div.menu_mobi, div.menu_mobi_add {
 .cover-content .buy:focus {
     opacity: 0.9;
     outline: none;
+}
+
+.attr-pro-detail.cover-content .price div p.price-discount {
+    font-size: 1.34em !important;
+}
+
+.attr-pro-detail.cover-content .price div p {
+    font-size: 1.5em !important;
 }
 
 /* CSS 25/03 */
@@ -37269,3 +37287,41 @@ div.menu_mobi, div.menu_mobi_add {
     font-weight: 600;
     color: #222;
 }
+
+.auto .cover-content {
+    border: 1px solid #e5e7eb;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+.auto .cover-content .add{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: default;
+    outline:none;
+}
+.auto .cover-content .add:focus{outline: none;}
+.auto .cover-content h6{
+    font-size: 1.4em;
+    min-height: 70px;
+}
+.auto .cover-content .add span{
+    margin-bottom: 12px;
+    width: 40%;
+    color: #fff;
+    font-weight: 500;
+    display: block;
+    border: 0;
+    border-radius: 50px;
+    background-color: var(--bg-color);
+    padding: 8px;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+.auto .cover-content .product-des-wrap p{
+    font-size: 0.9em;
+    min-height: 0;
+}
+.auto .cover-content .add span:hover{cursor:pointer;}

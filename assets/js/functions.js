@@ -1,4 +1,9 @@
-
+// Convert VND
+function convertPrice($price) {
+    $symbol = 'đ';
+    $new = number_format($price, 0, ',', '.');
+    return $new.$symbol;
+}
 
 
 function modalNotify(text){

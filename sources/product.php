@@ -11,7 +11,7 @@
 	if($id!='')
 	{ 
 		/* Lấy sản phẩm detail */
-		$row_detail = $d->rawQueryOne("select type, id, ten$lang, tenkhongdauvi, tenkhongdauen, mota$lang, noidung$lang, masp, luotxem, id_brand, id_mau, id_size,id_doday, id_list, id_cat, id_item, id_sub, id_tags, photo, options, giakm, giamoi, gia from #_product where id = ? and type = ? and hienthi > 0 limit 0,1",array($id,$type));
+		$row_detail = $d->rawQueryOne("select * from #_product where id = ? and type = ? and hienthi > 0 limit 0,1",array($id,$type));
 
 		/* Cập nhật lượt xem */
 		$data_luotxem['luotxem'] = $row_detail['luotxem'] + 1;
@@ -75,12 +75,12 @@
 			$where.=" and a.id_sub = ?";
 			array_push($params, $row_detail['id_sub']);
 		}
-
 		$curPage = $get_page;
-		$per_page = 8;
+		$per_page = 4;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
-		$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
+		// $sql = "select * from #_product order by a.stt,a.id desc";
+		$sql = "select `id`,ten$lang,`noibat`,`photo`,`tenkhongdau$lang`,`noidung$lang`,`mota$lang`,`masp`,`gia`,`giakm`,`giamoi`,`hienthi`,`motangan$lang` from table_product order by stt,id desc";
 		$product = $d->rawQuery($sql,$params);
 		$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 		$count = $d->rawQueryOne($sqlNum,$params);

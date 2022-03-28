@@ -116,6 +116,9 @@ echo $js->getJs();
     </script>
 
 <?php }*/ ?>
+<script type="text/javascript">
+    
+</script>
 <?php if ($template == 'tinhgia/tinhgia') { ?>
     <script type='text/javascript' src='./assets/js/thicong.js'></script>
     <script type="text/javascript">

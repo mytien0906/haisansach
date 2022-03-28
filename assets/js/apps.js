@@ -220,6 +220,7 @@ NN_FRAMEWORK.Videos = function () {
         });
     }
 };
+
 // Header carousel
 $(document).ready(function () {
     $('.autoplay').slick({
@@ -255,17 +256,16 @@ $(document).ready(function () {
         ]
 
     });
-    // Slider image at detail product
-    $('.carousel-detail-product').slick({
+    $('.auto').slick({
         dots: false,
-        slidesToShow: 1,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
         centerMode: false,
         centerPadding: 0,
-        prevArrow: false,
-        nextArrow: false,
+        prevArrow: true,
+        nextArrow: true,
         responsive: [{
             breakpoint: 768,
             infinite: true,
@@ -289,40 +289,7 @@ $(document).ready(function () {
         ]
 
     });
-    
-    // $('.carousel-list-product').slick({
-    //     dots: false,
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
-    //     autoplay: true,
-    //     autoplaySpeed: 2000,
-    //     centerMode: false,
-    //     centerPadding: 0,
-    //     prevArrow: true,
-    //     nextArrow: true,
-    //     responsive: [{
-    //         breakpoint: 768,
-    //         infinite: true,
-    //         settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1,
-    //             centerMode: true,
-    //             centerPadding: 0,
-    //         }
-    //     },
-    //     {
-    //         breakpoint: 500,
-    //         infinite: true,
-    //         settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1,
-    //             centerMode: true,
-    //             centerPadding: 0,
-    //         }
-    //     },
-    //     ]
 
-    // });
 
 });
 
@@ -395,7 +362,7 @@ NN_FRAMEWORK.OwlPage = function () {
             },
             dots: false
         });
-        $('.prev-slideshow').click(function () {
+        $('.prevs-lideshow').click(function () {
             $('.owl-slideshow').trigger('prev.owl.carousel');
         });
         $('.next-slideshow').click(function () {

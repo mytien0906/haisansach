@@ -1,7 +1,5 @@
 <?php
 session_start();
-$price = 1000000;
-var_dump(number_format($price, 0, '', ',')).die();
 ?>
 
 <!-- San pham moi nhat -->
@@ -13,15 +11,13 @@ var_dump(number_format($price, 0, '', ',')).die();
         <div class="row list-product">
             <?php
             foreach ($newproduct as $key => $value) {
-
-                // var_dump($sluglang).die();
             ?>
                 <div class="col-2 cover-content">
 
-                    <a href="<?= $value[$sluglang]?>" class="image">
-                        <img src="/upload/product/<?= $value['photo'] ?>" alt="">
+                    <a href="<?= $value[$sluglang] ?>" class="image">
+                        <img windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
-                    <a href="<?php  echo $value['tenkhongdauvi']?>">
+                    <a href="<?php echo $value['tenkhongdauvi'] ?>">
                         <h6><?= $value["tenvi"] ?></h6>
                     </a>
                     <?php if ($value['motanganvi']) { ?>
@@ -32,10 +28,10 @@ var_dump(number_format($price, 0, '', ',')).die();
                     <?php } ?>
                     <div class="price">
                         <div>
-                            <p><?= $value['gia'] ?></p>
-                            <p class="price-discount"><?= $value['giamoi'] ?></p>
+                            <p><?= $func->convertPrice($value['gia']) ?></p>
+                            <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
                         </div>
-                        <div class="discount"><?= $value['giakm'] ?>%</div>
+                        <div class="discount"><?= $func->convertPrice($value['giakm']) ?>%</div>
                     </div>
                     <button class="buy">Liên hệ</button>
                 </div>
@@ -57,12 +53,12 @@ var_dump(number_format($price, 0, '', ',')).die();
             ?>
                 <div class="col-2 cover-content">
                     <div class="product-img">
-                        <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
+                        <a href="<?php $value[$sluglang] ?>" class="image">
                             <img src="/upload/product/<?= $value['photo'] ?>" alt="">
                         </a>
-                        <img class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
+                        <img windown.location.href="<?php $value[$sluglang] ?>" class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
                     </div>
-                    <a href="$value['tenkhongdauvi']">
+                    <a href="<?= $value[$sluglang] ?>">
                         <h6><?= $value["tenvi"] ?></h6>
                     </a>
                     <?php if ($value['motanganvi']) { ?>
@@ -91,15 +87,16 @@ var_dump(number_format($price, 0, '', ',')).die();
     </div>
     <div class="row">
         <?php foreach ($splistmenu as $key => $value) {
+            var_dump($value['tenkhongdauvi']);
             // var_dump($splistmenu).die();
         ?>
             <div class="col-md-3 cover-content">
                 <div class="product-img">
                     <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
-                        <img src="/upload/product/<?= $value['photo'] ?>" alt="">
+                        <img windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
                 </div>
-                <a href="$value['tenkhongdauvi']" class="product-name">
+                <a href="<?php $value[$sluglang] ?>" class="product-name">
                     <h6><?= $value["tenvi"] ?></h6>
                 </a>
             </div>
@@ -111,13 +108,13 @@ var_dump(number_format($price, 0, '', ',')).die();
     <div class="fixwidth">
         <div class="row">
             <?php foreach ($criteria_list as $key => $value) { ?>
-                
+
                 <div class="col-md-3">
-                        <a href="" class="link-tieu-chi">
-                            <img src="/upload/photo/<?= $value['photo'] ?>" alt="">
-                        </a>
+                    <a href="<?php $value[$sluglang] ?>" class="link-tieu-chi">
+                        <img src="/upload/photo/<?= $value['photo'] ?>" alt="">
+                    </a>
                 </div>
-        <?php } ?>
+            <?php } ?>
         </div>
     </div>
 </div>
