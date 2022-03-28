@@ -451,7 +451,7 @@
                 <?php } ?>
 
                 <!-- Bài viết (Có cấp) -->
-                <?php if (isset($config['news'])) { ?>
+                <!-- <?php if (isset($config['news'])) { ?>
                     <?php foreach ($config['news'] as $k => $v) {
                         if (!isset($disabled['news'][$k])) {
                             if (isset($v['dropdown']) && $v['dropdown'] == true) { ?>
@@ -524,7 +524,7 @@
                     <?php }
                         }
                     } ?>
-                <?php } ?>
+                <?php } ?> -->
 
 
                 <!-- Bài viết (Không cấp) -->

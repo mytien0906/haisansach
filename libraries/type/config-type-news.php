@@ -2,24 +2,7 @@
 
 
  
-    /* tin tức */
-    $nametype = "gioi-thieu";
-    $config['news'][$nametype]['title_main'] = "Giới thiệu";
-    $config['news'][$nametype]['check'] = array();
-    $config['news'][$nametype]['view'] = true;
-    $config['news'][$nametype]['slug'] = true;
-    $config['news'][$nametype]['copy'] = true;
-    $config['news'][$nametype]['bando'] = false;
-    $config['news'][$nametype]['images'] = true;
-    $config['news'][$nametype]['show_images'] = true;
-    $config['news'][$nametype]['mota'] = true;
-    $config['news'][$nametype]['noidung'] = true;
-    $config['news'][$nametype]['noidung_cke'] = true;
-    $config['news'][$nametype]['seo'] = true;
-    $config['news'][$nametype]['width'] = 380;
-    $config['news'][$nametype]['height'] = 270;
-    $config['news'][$nametype]['thumb'] = '380x270x1';
-    $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+   
     /* tin tức */
     // $nametype = "tieu-chi";
     // $config['news'][$nametype]['title_main'] = "Tiêu chí";

@@ -150,6 +150,30 @@ echo $js->getJs();
 <script type="text/javascript">
     $(document).ready(function() {
         jQuery(document).ready(function() {
+            var page = 1;
+            // document.querySelector(".alert-warning").style.display="none";
+            $('#btn_xt').click(function() {
+                page = page + 1;
+                $.ajax({
+                    type: "GET",
+                    url: "ajax/ajax_ppage.php",
+                    data: {
+                        page: page
+                    },
+                    // beforeSend: function(data) {
+                    //     $('#alert_kq').hide();
+                    // },
+                    success: function(data) {
+                        if (data.length == 0) {
+                            // $('#alert_kq').html("Đã xem hết tin tức")
+                            $('#btn_xt').hide();
+                            // document.querySelector(".alert-warning").style.display="block";
+                            return;
+                        }
+                        $('.show-new-page').append(data);
+                    }
+                });
+            });
             jQuery('.catagory-title').on("click", function() {
                 if ($('.catagory-list__fix').css('display') == 'none') {
                     $('.catagory-list__fix').animate({

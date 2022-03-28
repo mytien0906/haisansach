@@ -1,6 +1,7 @@
-<div class="title-index">
+<!-- <div class="title-index">
    <span><?=(@$title_cat!='')?$title_cat:@$title_crumb?></span>
-</div>
+</div> -->
+<?php var_dump($static['noidungvi']).die(); ?>
 <div class="content-main w-clear"><?=(isset($static['noidung'.$lang]) && $static['noidung'.$lang] != '') ? htmlspecialchars_decode($static['noidung'.$lang]) : ''?></div>
 <div class="share">
 	<b><?=chiase?>:</b>

@@ -3,7 +3,7 @@
 	
 	/* Lấy bài viết tĩnh */
 	$static = $d->rawQueryOne("select id, type, ten$lang, noidung$lang, photo, ngaytao, ngaysua, options from #_static where type = ? limit 0,1",array($type));
-
+	
 	$seopage = $d->rawQueryOne("select * from #_seopage where type = ? limit 0,1",array($type));
 	$banner=$seopage['banner']; 
 	/* SEO */
@@ -34,4 +34,3 @@
 	/* breadCrumbs */
 	if(isset($title_crumb) && $title_crumb != '') $breadcr->setBreadCrumbs($com,$title_crumb);
 	$breadcrumbs = $breadcr->getBreadCrumbs();
-?>

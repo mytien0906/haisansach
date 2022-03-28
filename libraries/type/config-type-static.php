@@ -1,5 +1,5 @@
 <?php
-    /* Giới thiệu *-/
+    
     $nametype = "gioi-thieu";
     $config['static'][$nametype]['title_main'] = "Giới thiệu";
     $config['static'][$nametype]['images'] = false;
@@ -15,7 +15,7 @@
     $config['static'][$nametype]['height'] = 315;    
     $config['static'][$nametype]['width1'] = 440;
     $config['static'][$nametype]['height1'] = 325;
-    /*$config['static'][$nametype]['gallery'] = array(
+    $config['static'][$nametype]['gallery'] = array(
         $nametype => array(
             "title_main_photo" => "Hình ảnh chứng nhận",
             "title_sub_photo" => "Hình ảnh",
@@ -30,7 +30,7 @@
             "img_type_photo" => '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF'
         ),
         
-    );*-/
+    );
     $config['static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
     $config['static'][$nametype]['file_type'] = 'doc|docx|pdf|rar|zip|ppt|pptx|DOC|DOCX|PDF|RAR|ZIP|PPT|PPTX|xls|jpg|png|gif|JPG|PNG|GIF|xls|XLS';
 
@@ -66,6 +66,11 @@
     /* Liên hệ */
     $nametype = "lienhe";
     $config['static'][$nametype]['title_main'] = "Liên hệ";
+    $config['static'][$nametype]['noidung'] = true;
+    $config['static'][$nametype]['noidung_cke'] = true;
+    /* Tuyen dung */
+    $nametype = "tuyendung";
+    $config['static'][$nametype]['title_main'] = "Tuyển dụng";
     $config['static'][$nametype]['noidung'] = true;
     $config['static'][$nametype]['noidung_cke'] = true;
  

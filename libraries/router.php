@@ -87,22 +87,22 @@
 		array("tbl"=>"product_list","field"=>"idl","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		array("tbl"=>"product_cat","field"=>"idc","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		array("tbl"=>"product_item","field"=>"idi","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
-	
+		array("tbl"=>"product","field"=>"id","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		/* Sản phẩm */
 		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"nha-mau","type"=>"nha-mau",'menu'=>true),
 	 	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"nha-mau","type"=>"nha-mau",'menu'=>true),
 
 
 		/* Bài viết */		
-		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
+		// array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
 		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc",'menu'=>true),
 		array("tbl"=>"","field"=>"id","source"=>"","com"=>"tieu-chi","type"=>"tieu-chi",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"dich-vu","type"=>"dich-vu",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"thong-tin","type"=>"thong-tin",'menu'=>false),
  
-		/* Trang tĩnh 
-		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),*/
+		/* Trang tĩnh */
+		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
 
 		/* Liên hệ */
 		array("tbl"=>"","field"=>"id","source"=>"","com"=>"lien-he","type"=>"",'menu'=>true),
@@ -161,21 +161,21 @@
 			$title_crumb = 'Tính giá xây dựng';
 			break;
 
-		/*case 'gioi-thieu':
+		case 'gioi-thieu':
 			$source = "static";
 			$template = "static/static";
 			$type = $com;
 			$seo->setSeo('type','article');
 			$title_crumb = 'Giới thiệu';
-			break;*/
-	 
-  		case 'gioi-thieu':
-			$source = "news";
-			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
-			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
-			$type = $com;
-			$title_crumb = "Giới thiệu";
 			break;
+	 
+  		// case 'gioi-thieu':
+		// 	$source = "news";
+		// 	$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		// 	$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+		// 	$type = $com;
+		// 	$title_crumb = "Giới thiệu";
+		// 	break;
 
 		case 'tin-tuc':
 			$source = "news";
@@ -192,12 +192,19 @@
 			$title_crumb = "Góc ẩm thực";
 			break;
 		case 'tuyen-dung':
-			$source = "news";
-			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
-			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$source = "static";
+			$template = "static/static";
+			$seo->setSeo('type','article');
 			$type = $com;
 			$title_crumb = "Tuyển dụng";
 			break;
+		// case 'tuyen-dung':
+		// 	$source = "news";
+		// 	$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		// 	$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+		// 	$type = $com;
+		// 	$title_crumb = "Tuyển dụng";
+		// 	break;
 		case 'tieu-chi':
 			$source = "news";
 			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
@@ -242,7 +249,7 @@
 			$source = "product";
 			$template = isset($_GET['id']) ? "product/product_detail" : "product/product";
 			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
-			$type = $com;
+			$type = 'san-pham';
 			$title_crumb = 'Sản phẩm';
 			break;
 		

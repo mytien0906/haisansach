@@ -10,6 +10,8 @@ session_start();
         <div class="row list-product">
             <?php
             foreach ($newproduct as $key => $value) {
+
+                // var_dump($sluglang).die();
             ?>
                 <div class="col-2 cover-content">
 

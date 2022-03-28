@@ -10,9 +10,9 @@
         // die();
         // var_dump($title_crumb);
     ?>
-        <div class="col-md-12 post" id = "post_<?php echo $news['id']?>">
+        <div class="col-md-12 show-new-page">
             <?php foreach ($news as $k => $v) { ?>
-                <div class="row mb-10">
+                <div class="row mb-10 ">
                     <div class="col-md-4">
                         <p class="pic-news scale-img">
                             <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/320x240x1/assets/images/noimage.png';" src="<?= THUMBS ?>/320x240x1/<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>">
@@ -30,16 +30,19 @@
                 </div>
             <?php } ?>
         </div>
-        <div class="load-more">
+        <div class="load-more" id="btn_xt">
             Xem thêm
         </div>
         <div class="clear"></div>
-        <div class="paging-product"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
+        <!-- <div class="paging-product"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
     <?php } else { ?>
         <div class="alert alert-warning" role="alert">
             <strong><?= khongtimthayketqua ?></strong>
         </div>
     <?php } ?>
+    <!-- <div class="alert alert-warning" role="alert">
+        <strong id="alert_kq"></strong>
+    </div> -->
 
 </div>
 <?php if ($noidung_page != '') { ?>
