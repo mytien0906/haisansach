@@ -35192,18 +35192,21 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .boxfooter_container .title, .slogan-text {
     font-weight: 600;
     font-size: 1.2rem;
+    color: #fff;
 }
 
 .boxfooter_container .fixwidth {}
 
 .footer-list a, p.hotline {
     font-size: 1.2rem;
-    font-weight: 500;
+    /* font-weight: 500; */
+    color:#fff;
 }
 
 .footer-list a:hover {
     text-decoration: underline !important;
     color: #FFF;
+
 }
 
 .icon-block ul {
@@ -35233,6 +35236,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .slogan .title {
     padding-left: 7px;
+    color:#fff;
 }
 
 .boxfooter_left {
@@ -35405,10 +35409,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     color: #f00;
 }
 
-.wrap_right_detail {
+/* .wrap_right_detail {
     width: calc(100% - 300px);
     float: right
-}
+} */
 
 .mota_page_product {
     margin-bottom: 20px;
@@ -35506,15 +35510,17 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .grid-pro-detail {
     margin-bottom: 50px;
+    display: flex;
 }
 
 .left-pro-detail {
-    position: relative;
+    /* position: relative;
     float: left;
     width: 49%;
     text-align: center;
     margin-right: 2%;
-    background: white;
+    background: white; */
+    flex:3;
 }
 
 .left-pro-detail .MagicZoom {
@@ -35524,10 +35530,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 
 .right-pro-detail {
-    width: 49%;
-    float: right;
+    /* width: 49%;
+    float: right; */
+    flex:3
 }
-
+.right-pro-detail .wrap{
+    display: flex;
+}
 .gallery-thumb-pro {
     position: relative;
     margin-top: 10px;
@@ -35944,11 +35953,16 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .top-contact .article-contact {
     width: 48%;
 }
-
+.top-contact .article-contact .tabbed-content{
+    text-align: left;
+    padding-bottom: 15px;
+}
 .form-contact {
     width: 47%;
 }
-
+.pl-110{
+    padding-left: 80px;
+}
 .input-contact {
     position: relative;
     margin-bottom: 15px;

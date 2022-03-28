@@ -1,7 +1,10 @@
-<div class="title-index"><?=(@$title_cat!='')?$title_cat:@$title_crumb?></div>
 <div class="content-main w-clear">
     <div class="top-contact">
-        <div class="article-contact"><?=(isset($lienhe['noidung'.$lang]) && $lienhe['noidung'.$lang] != '') ? htmlspecialchars_decode($lienhe['noidung'.$lang]) : ''?></div>
+        <div class="article-contact">
+            <div class="tabbed-content title"><?=(@$title_cat!='')?$title_cat:@$title_crumb?></div>
+
+            <?=(isset($lienhe['noidung'.$lang]) && $lienhe['noidung'.$lang] != '') ? htmlspecialchars_decode($lienhe['noidung'.$lang]) : ''?>
+        </div>
         <form class="form-contact validation-contact" novalidate method="post" action="" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-contact col-sm-6">

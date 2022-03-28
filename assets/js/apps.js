@@ -255,6 +255,75 @@ $(document).ready(function () {
         ]
 
     });
+    // Slider image at detail product
+    $('.carousel-detail-product').slick({
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerMode: false,
+        centerPadding: 0,
+        prevArrow: false,
+        nextArrow: false,
+        responsive: [{
+            breakpoint: 768,
+            infinite: true,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: 0,
+            }
+        },
+        {
+            breakpoint: 500,
+            infinite: true,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: true,
+                centerPadding: 0,
+            }
+        },
+        ]
+
+    });
+    
+    // $('.carousel-list-product').slick({
+    //     dots: false,
+    //     slidesToShow: 3,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     centerMode: false,
+    //     centerPadding: 0,
+    //     prevArrow: true,
+    //     nextArrow: true,
+    //     responsive: [{
+    //         breakpoint: 768,
+    //         infinite: true,
+    //         settings: {
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1,
+    //             centerMode: true,
+    //             centerPadding: 0,
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 500,
+    //         infinite: true,
+    //         settings: {
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1,
+    //             centerMode: true,
+    //             centerPadding: 0,
+    //         }
+    //     },
+    //     ]
+
+    // });
+
 });
 
 /* Owl */

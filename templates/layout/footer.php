@@ -1,18 +1,18 @@
 <div class="boxfooter_container">
     <div class="fixwidth">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <h4 class="title">
                     Hải sản Hoàng Gia
                 </h4>
                 <ul class="footer-list">
                     <li><a href="goc-am-thuc">- Góc ẩm thực</a></li>
                     <li><a href="tin-tuc">- Tin tức</a></li>
-                    <li><a href="tuyen-dung">- Tuyển dụng</a></li>
+                    <li><a href="tuyendung">- Tuyển dụng</a></li>
                     <li><a href="lien-he">- Liên hệ</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <div class="slogan">
                     <a id="goidien" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
                         <img src="upload/photo/icons8-phone.svg" alt="images">
@@ -31,7 +31,7 @@
                     </a>
                 </p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <a href="" class="slogan-text">
                     <h4 class="title">
                         Theo Dõi Chúng Tôi
@@ -84,7 +84,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <a href=""><img src="upload/photo/ministry-industry-trade.png" alt="" width="60%"></a>
             </div>
         </div>

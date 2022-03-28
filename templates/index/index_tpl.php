@@ -1,6 +1,9 @@
 <?php
 session_start();
+$price = 1000000;
+var_dump(number_format($price, 0, '', ',')).die();
 ?>
+
 <!-- San pham moi nhat -->
 <div class="new-product">
     <div class="fixwidth">

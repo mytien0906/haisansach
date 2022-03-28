@@ -5,7 +5,9 @@ $favicon = $d->rawQueryOne("select photo from #_photo where type = ? and act = ?
 $logo = $d->rawQueryOne("select id, photo from #_photo where type = ? and act = ? limit 0,1", array('logo', 'photo_static'));
 
 
-
+// List recruit
+$rclist = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('tuyen-dung'));
+// List introduction
 $gtlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('gioi-thieu'));
 $splistmenuhouse = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('nha-mau'));
 
@@ -23,10 +25,9 @@ $splistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo,type from #
 //  WHERE #_product_list.id = ? AND #_product_list.type = ?",array('san-pham'));
 $newproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdauvi`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 ORDER BY id DESC limit 5", array('san-pham'));
 $popularproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdauvi`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 and table_product.noibat>0 limit 5", array('san-pham'));
-// 24/03
+
 $criteria_list = $d->rawQuery("SELECT id,photo FROM `#_photo` WHERE type = ?", array('tieu-chi'));
 
-// 25/03
 
 $footer = $d->rawQueryOne("select ten$lang, noidung$lang from #_static where type = ? limit 0,1", array('footer'));
 $social1 = $d->rawQuery("select ten$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('mxh'));

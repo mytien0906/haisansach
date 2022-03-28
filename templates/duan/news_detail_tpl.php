@@ -1,4 +1,4 @@
-<div class="title-index"><?=$title_crumb?></div>
+<div class="tabbed-content title"><?=$title_crumb?></div>
 <div class="main_news"><span><?=$row_detail['ten'.$lang]?></span></div>
 <?php /*<div class="time-main"><i class="fas fa-calendar-week"></i><span><?=ngaydang?>: <?=date("d/m/Y h:i A",$row_detail['ngaytao'])?></span></div>*/?>
 <?php if(isset($row_detail['noidung'.$lang]) && $row_detail['noidung'.$lang] != '') { ?>
