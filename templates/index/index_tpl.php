@@ -54,7 +54,7 @@ session_start();
                 <div class="col-2 cover-content">
                     <div class="product-img">
                         <a href="<?php $value[$sluglang] ?>" class="image">
-                            <img src="/upload/product/<?= $value['photo'] ?>" alt="">
+                            <img windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                         </a>
                         <img windown.location.href="<?php $value[$sluglang] ?>" class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
                     </div>
@@ -87,16 +87,14 @@ session_start();
     </div>
     <div class="row">
         <?php foreach ($splistmenu as $key => $value) {
-            var_dump($value['tenkhongdauvi']);
-            // var_dump($splistmenu).die();
         ?>
             <div class="col-md-3 cover-content">
                 <div class="product-img">
-                    <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
-                        <img windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
+                    <a href="<?= $value[$sluglang] ?>" class="image">
+                        <img windown.location.href="<?= $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
                 </div>
-                <a href="<?php $value[$sluglang] ?>" class="product-name">
+                <a href="<?= $value[$sluglang] ?>" class="product-name">
                     <h6><?= $value["tenvi"] ?></h6>
                 </a>
             </div>

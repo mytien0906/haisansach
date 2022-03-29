@@ -170,7 +170,7 @@
             <?php } ?>
         </div>
         <div class="clear"></div>
-        <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
+        <!-- <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
     <?php } else { ?>
         <div class="alert alert-warning" role="alert">
             <strong><?= khongtimthayketqua ?></strong>
