@@ -11,7 +11,8 @@ $dkythanhvien = $d->rawQueryOne("select id, noidung$lang,type from #_static wher
 $chinhsachkh = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('chinh-sach-khach-hang-than-thiet'));
 $chinhsachbm = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('chinh-sach-bao-mat-thong-tin'));
 // var_dump($chinhsachkh).die();
-
+// List photo in album
+$album = $d->rawQuery("SELECT `id`,`photo`,`noidungvi` FROM `table_photo` WHERE type = ?",array('album'));
 // List recruit
 $rclist = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('tuyen-dung'));
 // List introduction

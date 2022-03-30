@@ -40,7 +40,7 @@
     /* Slideshow */
     $nametype = "slide";
     $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Slideshow";
-    $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
+    $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
     $config['photo']['man_photo'][$nametype]['images_photo'] = true;
     $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
     $config['photo']['man_photo'][$nametype]['link_photo'] = true;
@@ -51,6 +51,19 @@
     $config['photo']['man_photo'][$nametype]['thumb_photo'] = '200x100x1';
     $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
  
+    /* Album hinh anh */
+    $nametype = "album";
+    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Album";
+    $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
+    $config['photo']['man_photo'][$nametype]['images_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['link_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['mota_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['width_photo'] = 910;
+    $config['photo']['man_photo'][$nametype]['height_photo'] = 380;
+    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '200x100x1';
+    $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
     // Banner tieu chi
     $nametype = "tieu-chi";
     $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Tiêu chí";
@@ -82,32 +95,32 @@
     $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
     /* Slideshow */
-    $nametype = "don-gia";
-    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Đơn giá";
-    $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
-    $config['photo']['man_photo'][$nametype]['images_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['link_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['mota_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['width_photo'] = 125;
-    $config['photo']['man_photo'][$nametype]['height_photo'] = 125;
-    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '125x125x2';
-    $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+    // $nametype = "don-gia";
+    // $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Đơn giá";
+    // $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
+    // $config['photo']['man_photo'][$nametype]['images_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['link_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['mota_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['width_photo'] = 125;
+    // $config['photo']['man_photo'][$nametype]['height_photo'] = 125;
+    // $config['photo']['man_photo'][$nametype]['thumb_photo'] = '125x125x2';
+    // $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
   
     /* Slideshow */
-    $nametype = "social-page";
-    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Social page";
-    $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
-    $config['photo']['man_photo'][$nametype]['images_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['link_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['mota_photo'] = false;
-    $config['photo']['man_photo'][$nametype]['width_photo'] = 415;
-    $config['photo']['man_photo'][$nametype]['height_photo'] = 300;
-    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '415x300x2';
-    $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+    // $nametype = "social-page";
+    // $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Social page";
+    // $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
+    // $config['photo']['man_photo'][$nametype]['images_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['link_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['mota_photo'] = false;
+    // $config['photo']['man_photo'][$nametype]['width_photo'] = 415;
+    // $config['photo']['man_photo'][$nametype]['height_photo'] = 300;
+    // $config['photo']['man_photo'][$nametype]['thumb_photo'] = '415x300x2';
+    // $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
   
     /* Background */
     // $nametype = "background-tieuchi";
@@ -179,9 +192,9 @@
  
  
     //Video
-    $nametype = "video";
-    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Video";
+    // $nametype = "video";
+    // $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Video";
     // $config['photo']['man_photo'][$nametype]['check_photo'] = array("noibat" => "Nổi bật");
-    $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
-    $config['photo']['man_photo'][$nametype]['video_photo'] = true;
-    $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['number_photo'] = 2;
+    // $config['photo']['man_photo'][$nametype]['video_photo'] = true;
+    // $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;

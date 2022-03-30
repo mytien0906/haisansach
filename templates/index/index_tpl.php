@@ -83,22 +83,30 @@ session_start();
 <!-- Danh muc -->
 <div class="category-block">
     <div class="tabbed-content">
-        <h3>Danh mục</h3>
+        <h3>Album hình ảnh</h3>
     </div>
-    <div class="row">
-        <?php foreach ($splistmenu as $key => $value) {
-        ?>
-            <div class="col-md-3 cover-content">
-                <div class="product-img">
-                    <a href="<?= $value[$sluglang] ?>" class="image">
-                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?= $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
+    <div class="fixwidth">
+
+        <div class="row autoplay-product-list">
+            <?php foreach ($album as $key => $value) {
+            ?>
+                <div class="cover-content">
+                    <a class="image" href="#">
+                        <?php if (isset($value['photo'])) { ?>
+                            <div style="
+                            background-image: url('<?= THUMBS ?>/200x100x1/<?= UPLOAD_PHOTO_L . $value['photo'] ?>');
+                            background-size: cover;
+                            height: 230px;
+                            background-repeat: no-repeat;
+                            background-position: top center;
+                            ">
+                            </div>
+                        <?php } ?>
                     </a>
+    
                 </div>
-                <a href="<?= $value[$sluglang] ?>" class="product-name">
-                    <h6><?= $value["tenvi"] ?></h6>
-                </a>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
 </div>
 <!-- Banner tieu chi -->

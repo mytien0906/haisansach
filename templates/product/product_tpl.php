@@ -1,4 +1,3 @@
-
 <div class="tabbed-content">
     <h2 style="text-transform: capitalize;">
         <?= (@$title_cat != '') ? $title_cat : @$title_crumb ?>
@@ -42,12 +41,12 @@
             <div class="row list-product">
 
             </div>
-            <div class="pagination-home"><?= (isset($pagingCate) && $pagingCate != '') ? $pagingCate : '' ?></div>
 
         </div>
     </div>
     <div class="clear"></div>
     <!--  -->
+    <div class="pagination-home"><?= (isset($pagingCate) && $pagingCate != '') ? $pagingCate : '' ?></div>
 
 </div>
 <?php if ($noidung_page != '') { ?>

@@ -261,7 +261,7 @@ $(document).ready(function () {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
         centerMode: false,
         centerPadding: 0,
         prevArrow: true,
