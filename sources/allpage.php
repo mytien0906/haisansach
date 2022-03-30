@@ -4,27 +4,33 @@ if (!defined('SOURCES')) die("Error");
 $favicon = $d->rawQueryOne("select photo from #_photo where type = ? and act = ? and hienthi > 0 limit 0,1", array('favicon', 'photo_static'));
 $logo = $d->rawQueryOne("select id, photo from #_photo where type = ? and act = ? limit 0,1", array('logo', 'photo_static'));
 
+// Get list services
+$dvlistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('dich-vu'));
+// Get list policies
+$dkythanhvien = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('dang-ky-the-thanh-vien'));
+$chinhsachkh = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('chinh-sach-khach-hang-than-thiet'));
+$chinhsachbm = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('chinh-sach-bao-mat-thong-tin'));
+// var_dump($chinhsachkh).die();
 
 // List recruit
-$rclist = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('tuyen-dung'));
+$rclist = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('tuyen-dung'));
 // List introduction
-$gtlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('gioi-thieu'));
-$splistmenuhouse = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('nha-mau'));
+$gtlistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('gioi-thieu'));
+$splistmenuhouse = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('nha-mau'));
 
-$dvlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('dich-vu'));
-$ttlistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('tin-tuc'));
-$nmlistmenu = $d->rawQuery("select ten$lang, type, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('nha-mau'));
+// $ttlistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('tin-tuc'));
+$nmlistmenu = $d->rawQuery("select ten$lang, type, tenkhongdau$lang, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc", array('nha-mau'));
 
-$tht = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('thong-tin'));
+$tht = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('thong-tin'));
 // New query
-// $product_list = $d->rawQuery("select tenvi, type, tenkhongdauvi, id,photo from table_product_list where type = 'san-pham' and hienthi > 0 order by stt,id desc");
+// $product_list = $d->rawQuery("select tenvi, type, tenkhongdau$lang, id,photo from table_product_list where type = 'san-pham' and hienthi > 0 order by stt,id desc");
 $splistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_list where type = ? and hienthi > 0 order by stt,id desc", array('san-pham'));
-// $splistmenu = $d->rawQuery("select #_product_list.id, #_product_list.tenvi, #_product_list.tenkhongdauvi, #_product_list.photo,
-//  #_product_cat.id, #_product_cat.tenvi, #_product_cat.tenkhongdauvi, #_product_cat.photo 
+// $splistmenu = $d->rawQuery("select #_product_list.id, #_product_list.tenvi, #_product_list.tenkhongdau$lang, #_product_list.photo,
+//  #_product_cat.id, #_product_cat.tenvi, #_product_cat.tenkhongdau$lang, #_product_cat.photo 
 //  FROM #_product_list RIGHT JOIN #_product_cat ON #_product_list.id = #_product_cat.id_list 
 //  WHERE #_product_list.id = ? AND #_product_list.type = ?",array('san-pham'));
-$newproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdauvi`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 ORDER BY id DESC limit 5", array('san-pham'));
-$popularproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdauvi`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 and table_product.noibat>0 limit 5", array('san-pham'));
+$newproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 ORDER BY id DESC limit 5", array('san-pham'));
+$popularproduct = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product WHERE #_product.type = ? and #_product.hienthi > 0 and table_product.noibat>0 limit 5", array('san-pham'));
 
 $criteria_list = $d->rawQuery("SELECT id,photo FROM `#_photo` WHERE type = ?", array('tieu-chi'));
 
@@ -34,7 +40,7 @@ $social1 = $d->rawQuery("select ten$lang, photo, link from #_photo where type = 
 
 $cs = $d->rawQuery("select ten$lang, tenkhongdau$lang from #_news where type = ? and hienthi > 0 order by stt,id desc ", array('chinh-sach'));
 
-//$tagsProduct = $d->rawQuery("select ten$lang, tenkhongdauvi, tenkhongdauen, id from #_tags where type = ? and noibat > 0 order by stt,id desc",array('san-pham'));
+//$tagsProduct = $d->rawQuery("select ten$lang, tenkhongdau$lang, tenkhongdauen, id from #_tags where type = ? and noibat > 0 order by stt,id desc",array('san-pham'));
 
 /* Get statistic */
 $counter = $statistic->getCounter();

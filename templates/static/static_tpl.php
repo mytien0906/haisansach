@@ -109,6 +109,9 @@
 <div class="content-main w-clear">
     <?= (isset($static['noidung' . $lang]) && $static['noidung' . $lang] != '') ? htmlspecialchars_decode($static['noidung' . $lang]) : '' ?>
     <?php
+    // var_dump(array($type)[0]);
+    // die();
+
     if (array($type)[0] == 'tuyendung') { ?>
         <div class="tabbed-content title">
             Vị trí tuyển dụng
@@ -140,6 +143,12 @@
 
             </div>
         </div>
+    <?php }
+    if(array($type)[0]=='gioi-thieu'){ 
+        
+        // var_dump($gtlistmenu).die();
+        ?>
+        
     <?php }
     ?>
 

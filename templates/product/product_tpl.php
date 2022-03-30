@@ -3,11 +3,30 @@
         <?= (@$title_cat != '') ? $title_cat : @$title_crumb ?>
     </h2>
 </div>
+<?php
+// var_dump($get_product_cate).die();
+?>
 <div class="content-main w-clear">
+    <ul class="nav nav-tabs tab-product" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="all-tab" data-toggle="tab" href="" role="tab" aria-controls="" aria-selected="false">Tất cả</a>
+        </li>
+        <?php foreach ($get_product_cate as $key => $item) { ?>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link <?php if ($key == 0) {
+                                        $_SESSION['cate_id'] = $item['id'];
+                                    } ?>" id="category_<?= $item['id'] ?>" id-category="<?= $item['id'] ?>" data-toggle="tab" href="<?=$item[$sluglang]?>?idc=<?= $item['id']?>" role="tab" aria-controls="" type-ne="<?= $item['type'] ?>" aria-selected=" <?php if ($key == 0) {
+                                                                                                                                                                                                                        echo "true";
+                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                        echo "false";
+                                                                                                                                                                                                                    } ?>"><?= $item['tenvi'] ?></a>
+            </li>
+        <?php } ?>
+    </ul>
     <?php
     // var_dump($sql);
     // var_dump($product).die();
-	// var_dump($pro_cate).die();
+    // var_dump($pro_cate).die();
     // var_dump($idl).die();
     ?>
     <?php if (isset($product) && count($product) > 0) { ?>

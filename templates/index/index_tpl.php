@@ -15,7 +15,7 @@ session_start();
                 <div class="col-2 cover-content">
 
                     <a href="<?= $value[$sluglang] ?>" class="image">
-                        <img windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
                     <a href="<?php echo $value['tenkhongdauvi'] ?>">
                         <h6><?= $value["tenvi"] ?></h6>
@@ -54,7 +54,7 @@ session_start();
                 <div class="col-2 cover-content">
                     <div class="product-img">
                         <a href="<?php $value[$sluglang] ?>" class="image">
-                            <img windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
+                            <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                         </a>
                         <img windown.location.href="<?php $value[$sluglang] ?>" class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
                     </div>
@@ -91,7 +91,7 @@ session_start();
             <div class="col-md-3 cover-content">
                 <div class="product-img">
                     <a href="<?= $value[$sluglang] ?>" class="image">
-                        <img windown.location.href="<?= $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?= $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
                 </div>
                 <a href="<?= $value[$sluglang] ?>" class="product-name">
@@ -109,7 +109,7 @@ session_start();
 
                 <div class="col-md-3">
                     <a href="<?php $value[$sluglang] ?>" class="link-tieu-chi">
-                        <img src="/upload/photo/<?= $value['photo'] ?>" alt="">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="/upload/photo/<?= $value['photo'] ?>" alt="">
                     </a>
                 </div>
             <?php } ?>

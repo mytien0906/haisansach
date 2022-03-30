@@ -8,6 +8,7 @@ if (!defined('SOURCES')) die("Error");
 @$ids = htmlspecialchars($_GET['ids']);
 @$idb = htmlspecialchars($_GET['idb']);
 // echo htmlspecialchars($_GET['idc']);die();
+// var_dump($idl);
 // var_dump($idc).die;
 if ($id != '') {
 	/* Lấy sản phẩm detail */
@@ -119,8 +120,11 @@ if ($id != '') {
 	/* Lấy cấp 1 detail */
 	$pro_list = $d->rawQueryOne("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
 	// Lay cap 2 - My Tien
-	$get_product_cate = $d->rawQueryOne("select id_list,id_cat from #_product where type = ?",array($type));
-	$pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdauvi, tenkhongdauen from #_product_cat where id = ? and type = ? and hienthi > 0 limit 0,1", array($get_product_cate['id_cat'], $type));
+	$get_product_cate = $d->rawQuery("select * FROM table_product_cat WHERE type =? and id_list = ?",array($type,$idl));
+	// var_dump($get_product_cate).die();
+	// var_dump($get_product_cate).die();
+	$pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_cate where id = ? and type = ? limit 0,1", array($get_product_cate['id_cat'], $type));
+	// $pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdauvi, tenkhongdauen from #_product_cat where id = ? and type = ? and hienthi > 0 limit 0,1", array($get_product_cate['id_cat'], $type));
 
 	$noidung_page = $pro_list['noidung' . $lang];
 	$mota_page = $pro_list['mota' . $lang];

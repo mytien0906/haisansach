@@ -1176,8 +1176,8 @@ class Functions
 		$total = $totalq;
 		$adjacents = "2";
 		$firstlabel = "First";
-		$prevlabel = "Prev";
-		$nextlabel = "Next";
+		$prevlabel = "<img src='assets/images/angles-left-solid.svg' alt='' style='width:10px'>";
+		$nextlabel = "<img src='assets/images/angles-right-solid.svg' alt='' style='width:10px'>";
 		$lastlabel = "Last";
 		$page = ($page == 0 ? 1 : $page);
 		$start = ($page - 1) * $per_page;
@@ -1189,12 +1189,11 @@ class Functions
 
 		if ($lastpage > 1) {
 			$pagination .= "<ul class='pagination justify-content-center mb-0'>";
-			$pagination .= "<li class='page-item'><a class='page-link'>Page {$page} / {$lastpage}</a></li>";
+			// $pagination .= "<li class='page-item'><a class='page-link'>Page {$page} / {$lastpage}</a></li>";
 
-			if ($page > 1) {
-				$pagination .= "<li class='page-item'><a class='page-link' href='{$this->getCurrentPageURL()}'>{$firstlabel}</a></li>";
+				// $pagination .= "<li class='page-item'><a class='page-link' href='{$this->getCurrentPageURL()}'>{$firstlabel}</a></li>";
 				$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$prev}'>{$prevlabel}</a></li>";
-			}
+			
 
 			if ($lastpage < 7 + ($adjacents * 2)) {
 				for ($counter = 1; $counter <= $lastpage; $counter++) {
@@ -1238,7 +1237,7 @@ class Functions
 
 			if ($page < $counter - 1) {
 				$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$next}'>{$nextlabel}</a></li>";
-				$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p=$lastpage'>{$lastlabel}</a></li>";
+				// $pagination .= "<li class='page-item'><a class='page-link' href='{$url}p=$lastpage'>{$lastlabel}</a></li>";
 			}
 
 			$pagination .= "</ul>";

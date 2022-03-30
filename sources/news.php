@@ -12,7 +12,6 @@
 	{
 		/* Lấy bài viết detail */
 		$row_detail = $d->rawQueryOne("select id, luotxem, ngaytao, id_list, id_cat, id_item, id_sub, type, ten$lang, tenkhongdauvi, tenkhongdauen, noidung$lang, photo, options from #_news where id = ? and type = ? and hienthi > 0 limit 0,1",array($id,$type));
-
 		/* Cập nhật lượt xem */
 		$data_luotxem['luotxem'] = $row_detail['luotxem'] + 1;
 		$d->where('id',$row_detail['id']);
@@ -39,7 +38,7 @@
 		$params = array($id,$row_detail['id_list'],$type);
 
 		$curPage = $get_page;
-		$per_page = 8;
+		$per_page = 3;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
 		// $sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";

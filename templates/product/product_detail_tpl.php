@@ -144,12 +144,12 @@
                 </div>
             <?php } ?>
         </div> -->
-        <div class="auto">
+        <div class="autoplay-product-list">
             <?php foreach ($product as $k => $v) { ?>
                 <div class="cover-content">
                     <a class="image" href="<?= $v['tenkhongdauvi'] ?>">
                         <span><img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="<?= THUMBS ?>/380x270x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" /></span></a>
-                        <a href="<?php  echo $v['tenkhongdauvi']?>">
+                    <a href="<?php echo $v['tenkhongdauvi'] ?>">
                         <h6><?= $v["tenvi"] ?></h6>
                     </a>
                     <?php if ($v['motanganvi']) { ?>

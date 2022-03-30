@@ -9245,7 +9245,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-
+.page-item{padding-right: 10px;}
 .page-item:first-child .page-link {
     margin-left: 0;
     border-top-left-radius: 0.25rem;
@@ -33959,7 +33959,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .menu ul.menu_cap_cha li.menulicha>a {
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     text-decoration: none;
     display: block;
     cursor: pointer;
@@ -33967,7 +33967,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     height: 50px;
     line-height: 50px;
     text-transform: capitalize;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 
 .menu ul.menu_cap_cha li.menulicha>a:hover, .menu ul.menu_cap_cha li.active>a {
@@ -37288,26 +37288,35 @@ div.menu_mobi, div.menu_mobi_add {
     color: #222;
 }
 
-.auto .cover-content {
+.autoplay-product-list .cover-content,.auto .cover-content {
     border: 1px solid #e5e7eb;
     margin: 0 10px;
     border-radius: 5px;
 }
-.auto .cover-content .add{
+
+.autoplay-product-list .cover-content .add ,
+.auto .cover-content .add {
     display: flex;
     justify-content: center;
     width: 100%;
     border: none;
     background: none;
     cursor: default;
-    outline:none;
+    outline: none;
 }
-.auto .cover-content .add:focus{outline: none;}
-.auto .cover-content h6{
+
+.autoplay-product-list .cover-content .add:focus ,
+.auto .cover-content .add:focus {
+    outline: none;
+}
+
+.autoplay-product-list .cover-content h6 {
     font-size: 1.4em;
     min-height: 70px;
 }
-.auto .cover-content .add span{
+
+.autoplay-product-list .cover-content .add span ,
+.auto .cover-content .add span {
     margin-bottom: 12px;
     width: 40%;
     color: #fff;
@@ -37320,9 +37329,49 @@ div.menu_mobi, div.menu_mobi_add {
     margin-top: 10px;
     transition: opacity 0.3s ease;
 }
-.auto .cover-content .product-des-wrap p{
+
+.autoplay-product-list .cover-content .product-des-wrap p {
     font-size: 0.9em;
     min-height: 0;
 }
-.auto .cover-content .add span:hover{cursor:pointer;}
-.content-main.w-clear{margin-bottom: 25px;}
+
+.autoplay-product-list .cover-content .add span:hover {
+    cursor: pointer;
+}
+
+.content-main.w-clear {
+    margin: 0 auto 25px
+}
+
+.tab-product {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+
+.tab-product.nav-tabs .nav-link {
+    /* background: orange; */
+    font-size: 1.55em;
+    font-family: 'RobotoMedium';
+    text-transform: capitalize;
+    padding: 0 50px;
+    color: var(--bg-color);
+}
+.tab-product.nav-tabs .nav-link:hover{background: none;}
+.tab-product.nav-tabs .nav-link.active {
+    background: none;
+    border-bottom: 2px solid var(--bg-color)
+}
+.auto{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.auto .cover-content h6{font-size: 1.1rem;}
+.cover-content-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}

@@ -1,14 +1,7 @@
 <h3 class="tabbed-content title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></h3>
-
 <div class="row">
     <?php if (count($news) > 0) {
-        // var_dump($news).die();
-        // var_dump($per_page);
-        // var_dump($startpoint);
-        // var_dump($limit);
-        // var_dump($news);
-        // die();
-        // var_dump($title_crumb);
+       
     ?>
         <div class="col-md-12 show-new-page">
             <?php foreach ($news as $k => $v) { ?>

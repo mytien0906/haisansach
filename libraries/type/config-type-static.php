@@ -68,11 +68,27 @@
     $config['static'][$nametype]['title_main'] = "Liên hệ";
     $config['static'][$nametype]['noidung'] = true;
     $config['static'][$nametype]['noidung_cke'] = true;
-    /* Tuyen dung */
-    $nametype = "tuyendung";
-    $config['static'][$nametype]['title_main'] = "Tuyển dụng";
+    /* Đăng ký thẻ thành viên */
+    $nametype = "dang-ky-the-thanh-vien";
+    $config['static'][$nametype]['title_main'] = "Đăng ký thẻ thành viên";
     $config['static'][$nametype]['noidung'] = true;
     $config['static'][$nametype]['noidung_cke'] = true;
+    /* Chính sách khách hàng thân thiết */
+    $nametype = "chinh-sach-khach-hang-than-thiet";
+    $config['static'][$nametype]['title_main'] = "Chính sách khách hàng thân thiết";
+    $config['static'][$nametype]['noidung'] = true;
+    $config['static'][$nametype]['noidung_cke'] = true;
+    /* Chính sách bảo mật thông tin */
+    $nametype = "chinh-sach-bao-mat-thong-tin";
+    $config['static'][$nametype]['title_main'] = "Chính sách bảo mật thông tin";
+    $config['static'][$nametype]['noidung'] = true;
+    $config['static'][$nametype]['noidung_cke'] = true;
+    /* Tuyen dung */
+    $nametype = "tuyendung";
+    $config['static'][$nametype]['title_main'] = "Tin tuyển dụng";
+    $config['static'][$nametype]['noidung'] = true;
+    $config['static'][$nametype]['noidung_cke'] = true;
+   
  
     /* Footer */
     $nametype = "footer";
@@ -80,4 +96,3 @@
     $config['static'][$nametype]['tieude'] = false;
     $config['static'][$nametype]['noidung'] = true;
     $config['static'][$nametype]['noidung_cke'] = true;
-?>

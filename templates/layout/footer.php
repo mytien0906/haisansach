@@ -15,7 +15,7 @@
             <div class="col-md-3 pl-110" >
                 <div class="slogan">
                     <a id="goidien" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
-                        <img src="upload/photo/icons8-phone.svg" alt="images">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/icons8-phone.svg" alt="images">
                     </a>
                     <a href="" class="slogan-text">
                         <h4 class="title">
@@ -26,7 +26,7 @@
                     </a>
                 </div>
                 <p class="hotline">
-                    <a id="goidien" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
+                    <a id="goidien" onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
                         Hotline: <?= $optsetting['hotline'] ?>
                     </a>
                 </p>
@@ -75,7 +75,7 @@
                         </li>
                         <li>
                             <a id="instagram" href="<?= $optsetting['instagram'] ?>" title="title">
-                                <img src="upload/photo/zalo.svg" alt="">
+                                <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/zalo.svg" alt="">
                             </a>
                         </li>
 
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="col-md-3 pl-110" >
-                <a href=""><img src="upload/photo/ministry-industry-trade.png" alt="" width="60%"></a>
+                <a href=""><img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/ministry-industry-trade.png" alt="" width="60%"></a>
             </div>
         </div>
         <!-- <div class="boxfooter_left">

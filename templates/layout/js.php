@@ -154,6 +154,7 @@ echo $js->getJs();
     $(document).ready(function() {
         jQuery(document).ready(function() {
             var page = 1;
+            var type = "<?= $com ?>"
             // document.querySelector(".alert-warning").style.display="none";
             $('#btn_xt').click(function() {
                 page = page + 1;
@@ -161,7 +162,8 @@ echo $js->getJs();
                     type: "GET",
                     url: "ajax/ajax_ppage.php",
                     data: {
-                        page: page
+                        page: page,
+                        type: type,
                     },
                     // beforeSend: function(data) {
                     //     $('#alert_kq').hide();

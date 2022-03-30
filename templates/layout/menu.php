@@ -55,23 +55,20 @@
 
                 </div>
                 <div class="menu_mobi_add"></div>
-                    <div class="menu_mobi align-self-center">
-                        <p class="icon_menu_mobi"><i class="fas fa-bars"></i></p>
-                        <p class="menu_baophu"></p>
-                        <a href="" class="home_mobi">
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                <div class="menu_mobi align-self-center">
+                    <p class="icon_menu_mobi"><i class="fas fa-bars"></i></p>
+                    <p class="menu_baophu"></p>
+                    <a href="" class="home_mobi">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </a>
+                </div>
                 <div class="boxmenu_right d-flex align-self-center justify-content-between flex-wrap">
                     <div class="menu">
                         <ul class="menu_cap_cha d-flex justify-content-center">
                             <li class="menulicha <?= $source == 'index' ? 'active' : '' ?>"><a href="" title="TRANG CHỦ">Trang chủ</a></li>
-                            <li class="menulicha <?= $com == 'gioi-thieu' ? 'active' : '' ?>"><a href="gioi-thieu" title="GIỚI THIỆU">Giới thiệu
-                                    <?php if ($gtlistmenu) { ?>
-                                        <i class="desktop-li fal fa-angle-down"></i>
-                                    <?php } ?>
-                                </a>
-                                <?php if ($gtlistmenu) { ?>
+                            <li class="menulicha <?= $com == 'gioi-thieu' ? 'active' : '' ?>">
+                                <a href="gioi-thieu" title="GIỚI THIỆU">Giới thiệu</a>
+                                <!-- <?php if ($gtlistmenu) { ?>
                                     <ul class="menu_cap_con">
                                         <?php foreach ($gtlistmenu as $c => $cat) { ?>
                                             <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a>
@@ -83,36 +80,38 @@
                                                 </ul>
                                             </li>
                                         <?php } ?>
-                                    </ul>
-                                <?php } ?>
+                                    </ul> -->
+                            <?php } ?>
                             </li>
 
-                            <li class="menulicha <?= $com == 'nha-mau' ? 'active' : '' ?>"><a href="nha-mau" title="NHÀ MẪU">Khuyến mãi
-                                    <?php if ($splistmenuhouse) { ?>
+                            <li class="menulicha <?= $com == 'khuyen-mai' ? 'active' : '' ?>"><a href="khuyen-mai" title="KHUYẾN MÃI">Khuyến mãi
+                                    <!-- <?php if ($splistmenuhouse) { ?>
                                         <i class="desktop-li fal fa-angle-down"></i>
-                                    <?php } ?>
+                                    <?php } ?> -->
                                 </a>
-                                <?php if ($splistmenuhouse) { ?>
+                                <!-- <?php if ($splistmenuhouse) { ?>
                                     <ul class="menu_cap_con">
                                         <?php foreach ($splistmenuhouse as $c => $cat) { ?>
                                             <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
                                         <?php } ?>
                                     </ul>
-                                <?php } ?>
+                                <?php } ?> -->
                             </li>
 
-                            <li class="menulicha <?= $com == 'dich-vu' ? 'active' : '' ?>"><a href="dich-vu" title="DỊCH VỤ">Dịch vụ
-                                    <?php if ($dvlistmenu) { ?>
-                                        <i class="desktop-li fal fa-angle-down"></i>
+                            <li class="menulicha" style="cursor:default"><a title="DỊCH VỤ">Dịch vụ
+                                    <?php
+                                    if (isset($dvlistmenu) || isset($dkythanhvien) || isset($chinhsachkh) || isset($chinhsachbm)) { ?>
+                                        <ul class="menu_cap_con">
+                                            <li><a href="<?= $dkythanhvien['type'] ?>">Đăng ký thẻ thành viên</a></li>
+                                            <li><a href="dich-vu">Chính sách quy định chung</a></li>
+                                            <li><a href="<?= $chinhsachkh['type'] ?>">Chính sách khách hàng thân thiết</a></li>
+                                            <li><a href="<?= $chinhsachbm['type'] ?>">Chính sách bảo mật thông tin</a></li>
+                                        </ul>
                                     <?php } ?>
+
+
                                 </a>
-                                <?php if ($dvlistmenu) { ?>
-                                    <ul class="menu_cap_con">
-                                        <?php foreach ($dvlistmenu as $c => $cat) { ?>
-                                            <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a></li>
-                                        <?php } ?>
-                                    </ul>
-                                <?php } ?>
+
                             </li>
                             <li class="menulicha <?= $com == 'tin-tuc' ? 'active' : '' ?>"><a href="tin-tuc" title="TIN TỨC">Tin tức
                                     <?php if ($ttlistmenu) { ?>

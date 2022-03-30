@@ -20,7 +20,7 @@
 <div id="gallery" style="display:none;">
     <?php foreach($hinhanhtt as $k=>$v){?>
     
-        <img alt="<?=$row_detail['ten'.$lang]?>" src="<?=THUMBS?>/0x350x1/<?=UPLOAD_NEWS_L.$v['photo']?>" data-image="<?=UPLOAD_NEWS_L.$v['photo']?>" data-description="<?=$v['tenvi']?>" style="display:none">
+        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" alt="<?=$row_detail['ten'.$lang]?>" src="<?=THUMBS?>/0x350x1/<?=UPLOAD_NEWS_L.$v['photo']?>" data-image="<?=UPLOAD_NEWS_L.$v['photo']?>" data-description="<?=$v['tenvi']?>" style="display:none">
     
     <?php }?>
 </div>

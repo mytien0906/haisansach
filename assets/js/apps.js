@@ -256,7 +256,7 @@ $(document).ready(function () {
         ]
 
     });
-    $('.auto').slick({
+    $('.autoplay-product-list').slick({
         dots: false,
         slidesToShow: 5,
         slidesToScroll: 1,
