@@ -7,9 +7,7 @@ if (!defined('SOURCES')) die("Error");
 @$idi = htmlspecialchars($_GET['idi']);
 @$ids = htmlspecialchars($_GET['ids']);
 @$idb = htmlspecialchars($_GET['idb']);
-// echo htmlspecialchars($_GET['idc']);die();
-// var_dump($idl);
-// var_dump($idc).die;
+
 if ($id != '') {
 	/* Lấy sản phẩm detail */
 	$row_detail = $d->rawQueryOne("select * from #_product where id = ? and type = ? and hienthi > 0 limit 0,1", array($id, $type));
@@ -119,10 +117,8 @@ if ($id != '') {
 } else if ($idl != '') {
 	/* Lấy cấp 1 detail */
 	$pro_list = $d->rawQueryOne("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
-	// Lay cap 2 - My Tien
-	$get_product_cate = $d->rawQuery("select * FROM table_product_cat WHERE type =? and id_list = ?",array($type,$idl));
-	// var_dump($get_product_cate).die();
-	// var_dump($get_product_cate).die();
+	$get_product_cate = $d->rawQuery("select * FROM table_product_cat WHERE type =? and id_list = ?", array($type, $idl));
+	
 	$pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_cate where id = ? and type = ? limit 0,1", array($get_product_cate['id_cat'], $type));
 	// $pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdauvi, tenkhongdauen from #_product_cat where id = ? and type = ? and hienthi > 0 limit 0,1", array($get_product_cate['id_cat'], $type));
 
@@ -157,18 +153,14 @@ if ($id != '') {
 		$where = "a.id_list = ? and a.type = ? and a.hienthi > 0";
 		$params = array($idl, $type);
 	}
-	if ($pro_cat['id'] > 0) {
-		/* Lấy sản phẩm theo danh muc cap 2*/
-		$where .= " and a.id_cat = ?";
-		array_push($params, $pro_cat['id']);
-	}
+
 
 	// Load du lieu
 	$curPage = $get_page;
 	$per_page = 5;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
+	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia,a.id_list from #_product a where $where order by a.stt,a.id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -182,7 +174,6 @@ if ($id != '') {
 } else if ($idc != '') {
 	/* Lấy cấp 2 detail */
 	$pro_cat = $d->rawQueryOne("select id, id_list, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_cat where id = ? and type = ? limit 0,1", array($idc, $type));
-	var_dump($pro_cat) . die();
 	$noidung_page = $pro_cat['noidung' . $lang];
 	$mota_page = $pro_cat['mota' . $lang];
 	/* Lấy cấp 1 */

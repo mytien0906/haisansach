@@ -1169,7 +1169,7 @@ class Functions
 	}
 
 	/* Pagination */
-	public function pagination($totalq = 0, $per_page = 10, $page = 1, $url = '?')
+	public function pagination($totalq = 0, $per_page = 5, $page = 1, $url = '?')
 	{
 		$urlpos = strpos($url, "?");
 		$url = ($urlpos) ? $url . "&" : $url . "?";
@@ -1196,6 +1196,7 @@ class Functions
 			
 
 			if ($lastpage < 7 + ($adjacents * 2)) {
+				
 				for ($counter = 1; $counter <= $lastpage; $counter++) {
 					if ($counter == $page) $pagination .= "<li class='page-item active'><a class='page-link'>{$counter}</a></li>";
 					else $pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$counter}'>{$counter}</a></li>";

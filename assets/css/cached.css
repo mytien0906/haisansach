@@ -36302,7 +36302,7 @@ div.menu_mobi, div.menu_mobi_add {
 }
 
 .cover-content .price div p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 700;
     color: #ff413e;
     margin-bottom: 0;
@@ -37375,4 +37375,8 @@ div.menu_mobi, div.menu_mobi_add {
     justify-content: space-between;
     align-items: center;
     
+}
+.list-product{
+    justify-content: center;
+    margin-top: 25px;
 }

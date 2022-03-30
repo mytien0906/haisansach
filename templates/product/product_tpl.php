@@ -1,3 +1,4 @@
+
 <div class="tabbed-content">
     <h2 style="text-transform: capitalize;">
         <?= (@$title_cat != '') ? $title_cat : @$title_crumb ?>
@@ -6,29 +7,48 @@
 
 <div class="content-main w-clear">
     <ul class="nav nav-tabs tab-product" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="all-tab" data-toggle="tab" href="" role="tab" aria-controls="" aria-selected="false">Tất cả</a>
-        </li>
+
+        <?php if (isset($product) && count($product) > 0) { ?>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active
+                <?php
+                $_SESSION['list_id'] = $product[0]['id_list'];
+                ?>
+                " idl="<?= $product[0]['id_list'] ?>" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected=" <?php if ($key == 0) {
+                                                                                                                                    echo "true";
+                                                                                                                                } else {
+                                                                                                                                    echo "false";
+                                                                                                                                } ?>">Tất cả</a>
+            </li>
+        <?php }
+        ?>
         <?php foreach ($get_product_cate as $key => $item) {
         ?>
             <li class="nav-item" role="presentation">
                 <a class="nav-link <?php if ($key == 0) {
                                         $_SESSION['cate_id'] = $item['id'];
-                                    } ?>" idc="<?= $item['id'] ?>" id-category="<?= $item['id'] ?>" data-toggle="tab" href="#" role="tab" aria-controls="" type-ne="<?= $item['type'] ?>" aria-selected=" <?php if ($key == 0) {
-                                                                                                                                                                                                            } ?>"><?= $item['tenvi'] ?></a>
+                                    } ?>" idc="<?= $item['id'] ?>" data-toggle="tab" href="#" role="tab" aria-controls="" type-ne="<?= $item['type'] ?>" aria-selected=" <?php if ($key == 0) {
+                                                                                                                                                                                echo "true";
+                                                                                                                                                                            } else {
+                                                                                                                                                                                echo "false";
+                                                                                                                                                                            } ?>">
+                    <?= $item['tenvi'] ?>
+                </a>
             </li>
         <?php } ?>
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fad show active" id="" role="tabpanel" aria-labelledby="">
             <div class="row list-product">
-                                                                                                                                                                                      
+
             </div>
+            <div class="pagination-home"><?= (isset($pagingCate) && $pagingCate != '') ? $pagingCate : '' ?></div>
+
         </div>
     </div>
-    <!--  -->
     <div class="clear"></div>
-    <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
+    <!--  -->
+
 </div>
 <?php if ($noidung_page != '') { ?>
     <div class="noidung_page_product">
@@ -44,15 +64,17 @@
 <script>
     $(document).ready(function() {
         showNews();
-        $('[id-category]').click(function() {
-            var id = $(this).attr('id-category');
+        $('.nav-link').click(function() {
+            var idl = $(this).attr('idl');
+            var idc = $(this).attr('idc');
             var type = $(this).attr('type-ne');
             $.ajax({
-                url: "ajax/ajax_house.php",
+                url: "ajax/ajax_house.php?p=",
                 method: "POST",
                 data: {
-                    id: id,
-                    type: type,
+                    idl: idl,
+                    idc: idc,
+                    type: type
                 },
                 success: function(data) {
                     $('.list-product').html(data);
@@ -62,14 +84,18 @@
         });
 
         function showNews() {
-            var id = "<?= $_SESSION['cate_id']; ?>";
+
+            var idl = "<?= $_SESSION['list_id']; ?>";
+            var idc = "<?= $_SESSION['cate_id']; ?>";
+            var page = "<?= $_SESSION['page']; ?>";
             var type = 'san-pham';
 
             $.ajax({
                 url: "ajax/ajax_house.php",
                 method: "POST",
                 data: {
-                    id: id,
+                    idl: idl,
+                    idc: idc,
                     type: type,
                 },
                 success: function(data) {
