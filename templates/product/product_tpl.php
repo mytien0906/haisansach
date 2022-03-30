@@ -3,49 +3,30 @@
         <?= (@$title_cat != '') ? $title_cat : @$title_crumb ?>
     </h2>
 </div>
-<?php
-// var_dump($get_product_cate).die();
-?>
+
 <div class="content-main w-clear">
     <ul class="nav nav-tabs tab-product" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="all-tab" data-toggle="tab" href="" role="tab" aria-controls="" aria-selected="false">Tất cả</a>
         </li>
-        <?php foreach ($get_product_cate as $key => $item) { ?>
+        <?php foreach ($get_product_cate as $key => $item) {
+        ?>
             <li class="nav-item" role="presentation">
                 <a class="nav-link <?php if ($key == 0) {
                                         $_SESSION['cate_id'] = $item['id'];
-                                    } ?>" id="category_<?= $item['id'] ?>" id-category="<?= $item['id'] ?>" data-toggle="tab" href="<?=$item[$sluglang]?>?idc=<?= $item['id']?>" role="tab" aria-controls="" type-ne="<?= $item['type'] ?>" aria-selected=" <?php if ($key == 0) {
-                                                                                                                                                                                                                        echo "true";
-                                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                                        echo "false";
-                                                                                                                                                                                                                    } ?>"><?= $item['tenvi'] ?></a>
+                                    } ?>" idc="<?= $item['id'] ?>" id-category="<?= $item['id'] ?>" data-toggle="tab" href="#" role="tab" aria-controls="" type-ne="<?= $item['type'] ?>" aria-selected=" <?php if ($key == 0) {
+                                                                                                                                                                                                            } ?>"><?= $item['tenvi'] ?></a>
             </li>
         <?php } ?>
     </ul>
-    <?php
-    // var_dump($sql);
-    // var_dump($product).die();
-    // var_dump($pro_cate).die();
-    // var_dump($idl).die();
-    ?>
-    <?php if (isset($product) && count($product) > 0) { ?>
-        <div class="loadkhung_product mainkhung_product">
-            <?php foreach ($product as $k => $v) { ?>
-                <div class="boxproduct_item">
-                    <a class="boxproduct_img" href="<?= $v['tenkhongdauvi'] ?>"><span><img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="<?= THUMBS ?>/380x270x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" /></span></a>
-                    <div class="boxproduct_info">
-                        <div class="boxproduct_name"><a href="<?= $v['tenkhongdauvi'] ?>" title="<?= $v['tenvi'] ?>"><?= $v['ten' . $lang] ?></a></div>
-                        <div class="boxproduct_price">Giá: <span><?= $func->format_money($v['gia']) ?></span></div>
-                    </div>
-                </div>
-            <?php } ?>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fad show active" id="" role="tabpanel" aria-labelledby="">
+            <div class="row list-product">
+                                                                                                                                                                                      
+            </div>
         </div>
-    <?php } else { ?>
-        <div class="alert alert-warning" role="alert">
-            <strong><?= khongtimthayketqua ?></strong>
-        </div>
-    <?php } ?>
+    </div>
+    <!--  -->
     <div class="clear"></div>
     <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
 </div>
@@ -59,3 +40,43 @@
         <div id="toc-content"><?= htmlspecialchars_decode($noidung_page) ?></div>
     </div>
 <?php } ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        showNews();
+        $('[id-category]').click(function() {
+            var id = $(this).attr('id-category');
+            var type = $(this).attr('type-ne');
+            $.ajax({
+                url: "ajax/ajax_house.php",
+                method: "POST",
+                data: {
+                    id: id,
+                    type: type,
+                },
+                success: function(data) {
+                    $('.list-product').html(data);
+                }
+
+            });
+        });
+
+        function showNews() {
+            var id = "<?= $_SESSION['cate_id']; ?>";
+            var type = 'san-pham';
+
+            $.ajax({
+                url: "ajax/ajax_house.php",
+                method: "POST",
+                data: {
+                    id: id,
+                    type: type,
+                },
+                success: function(data) {
+                    $('.list-product').html(data);
+                }
+
+            });
+        }
+    })
+</script>

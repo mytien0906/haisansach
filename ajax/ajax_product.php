@@ -57,7 +57,7 @@
 			<div class="boxproduct_item">
 				<div class="boxproduct_mainimg">
 					<a class="boxproduct_img" href="<?=$v['tenkhongdauvi']?>"><img onerror="this.src='<?=THUMBS?>/280x280x2/assets/images/noimage.png';" src="<?=WATERMARK?>/product/280x280x1/<?=UPLOAD_PRODUCT_L.$v['photo']?>" alt="<?=$v['ten'.$lang]?>"/></a>
-					<a class="boxproduct_info" href="<?=$v['tenkhongdauvi']?>">
+					<a class="boxproduct_infoqqq" href="<?=$v['tenkhongdauvi']?>">
 						<p>
 							<span class="boxproduct_namecat"><?=$namelist['ten'.$lang]?></span>
 							<span class="boxproduct_mota"><?=$v['motangan'.$lang]?></span>

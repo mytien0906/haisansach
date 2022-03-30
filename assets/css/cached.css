@@ -36014,6 +36014,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .pagination-home .pagination .page-item .page-link {
     color: #555555;
     font-size: .875rem;
+    border-radius: 50%;
 }
 
 .pagination-home .pagination .page-item.active .page-link {
@@ -36248,7 +36249,7 @@ div.menu_mobi, div.menu_mobi_add {
     white-space: nowrap;
     text-transform: capitalize;
     line-height: 40px; */
-    font-size: 1.6em;
+    font-size: 1.3em;
     font-weight: 500;
     text-transform: capitalize;
     line-height: 30px;
