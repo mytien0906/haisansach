@@ -5,23 +5,25 @@ define('THUMBS', 'thumbs');
 $type = $_POST['type'];
 $idl = $_POST['idl'];
 $idc = $_POST['idc'];
-$get_page = $_POST['page'];
+
+// var_dump($type);
+// var_dump($idl);
+
 $where = "";
 $where = "type = ? and hienthi > 0";
 array_push($params, $type);
 $params = array();
-if (isset($idl)) {
-	$where = "table_product.id_list = ? ";
-	array_push($params, $idl);
+if (isset($type)) {
+	$where = "";
 	// $list_pro_cat = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` from table_product where $where and table_product.type = ? order by table_product.stt,table_product.id desc limit 5", array($idl, $type));
 }
-if ($idc > 0 && $idl == null) {
-	$where = "table_product.id_cat = ?";
-	array_push($params, $idc);
+if (isset($idl) && $type == NULL) {
+	$where = " where table_product.id_list = ?";
+	array_push($params, $idl);
 }
 
 $sql = "select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,
-`giamoi`,`type` from table_product where $where order by table_product.stt,table_product.id desc limit 5";
+`giamoi`,`type` from table_product $where order by table_product.stt,table_product.id desc limit 5";
 $list_pro_cat = $d->rawQuery($sql, $params);
 
 

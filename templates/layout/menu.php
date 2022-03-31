@@ -92,7 +92,7 @@
                                     if (isset($splistmenu)) { ?>
                                         <ul class="menu_cap_con">
                                             <?php foreach ($splistmenu as $key => $value) { ?>
-                                                <li><a href="<?= $value[$sluglang] ?>"><?= $value['ten' . $lang] ?></a></li>
+                                                <li><a href="<?= $value[$sluglang] ?>?idl=<?= $value['id'] ?>"><?= $value['ten' . $lang] ?></a></li>
                                             <?php } ?>
                                         </ul>
                                     <?php } ?>

@@ -25,7 +25,7 @@
     <?php } ?>
     
 </div>
-<?php if($noidung_page!=''){?>
+<!-- <?php if($noidung_page!=''){?>
 <div class="noidung_page">
     <div class="meta-toc">
         <div class="box-readmore">
@@ -34,4 +34,4 @@
     </div>
     <div id="toc-content"><?=htmlspecialchars_decode($noidung_page)?></div>
 </div>
-<?php }?>
+<?php }?> -->

@@ -8,6 +8,7 @@ if (!defined('SOURCES')) die("Error");
 @$ids = htmlspecialchars($_GET['ids']);
 @$idb = htmlspecialchars($_GET['idb']);
 
+
 if ($id != '') {
 	/* Lấy sản phẩm detail */
 	$row_detail = $d->rawQueryOne("select * from #_product where id = ? and type = ? and hienthi > 0 limit 0,1", array($id, $type));
@@ -116,13 +117,8 @@ if ($id != '') {
 	$breadcrumbs = $breadcr->getBreadCrumbs();
 } else if ($idl != '') {
 	/* Lấy cấp 1 detail */
-	$pro_list = $d->rawQueryOne("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
-	/* Lấy cấp 2 detail */
-	$get_product_cate = $d->rawQuery("select * FROM table_product_cat WHERE type =? and id_list = ?", array($type, $idl));
-	
-	$pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_cate where id = ? and type = ? limit 0,1", array($get_product_cate['id_cat'], $type));
-	// $pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdauvi, tenkhongdauen from #_product_cat where id = ? and type = ? and hienthi > 0 limit 0,1", array($get_product_cate['id_cat'], $type));
-
+	$pro_list = $d->rawQueryOne("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
+	var_dump($pro_list);
 	$noidung_page = $pro_list['noidung' . $lang];
 	$mota_page = $pro_list['mota' . $lang];
 	/* SEO */
@@ -145,29 +141,24 @@ if ($id != '') {
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
 	}
-	/* Lấy id danh mục cấp 2 */
-	$params = array();
+
+	/* Lấy sản phẩm */
 	$where = "";
-	// var_dump($pro_cat['id']);
-	if ($pro_list['id'] > 0) {
-		/* Lấy sản phẩm theo danh muc cap 1*/
-		$where = "a.id_list = ? and a.type = ? and a.hienthi > 0";
-		$params = array($idl, $type);
-	}
+	$where = "a.id_list = ? and a.type = ? and a.hienthi > 0";
+	$params = array($idl, $type);
 
-
-	// Load du lieu
 	$curPage = $get_page;
-	$per_page = 5;
+	$per_page = 20;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia,a.id_list from #_product a where $where order by a.stt,a.id desc $limit";
+	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
 	$total = $count['num'];
 	$url = $func->getCurrentPageURL();
 	$paging = $func->pagination($total, $per_page, $curPage, $url);
+
 	/* breadCrumbs */
 	if (isset($title_crumb) && $title_crumb != '') $breadcr->setBreadCrumbs($com, $title_crumb);
 	if ($pro_list != null) $breadcr->setBreadCrumbs($pro_list[$sluglang], $pro_list['ten' . $lang]);
@@ -411,11 +402,11 @@ if ($id != '') {
 	$params = array($type);
 
 	$curPage = $get_page;
-	$per_page = 20;
+	$per_page = 10;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
 	$sql = "select a.ten$lang, a.tenkhongdauvi, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
-	$product = $d->rawQuery($sql, $params);
+	$list_all_products = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
 	$total = $count['num'];

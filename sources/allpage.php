@@ -7,12 +7,12 @@ $logo = $d->rawQueryOne("select id, photo from #_photo where type = ? and act = 
 // Get list services
 $dvlistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('dich-vu'));
 // Get list policies
-$dkythanhvien = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('dang-ky-the-thanh-vien'));
-$chinhsachkh = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('chinh-sach-khach-hang-than-thiet'));
-$chinhsachbm = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1",array('chinh-sach-bao-mat-thong-tin'));
+$dkythanhvien = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1", array('dang-ky-the-thanh-vien'));
+$chinhsachkh = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1", array('chinh-sach-khach-hang-than-thiet'));
+$chinhsachbm = $d->rawQueryOne("select id, noidung$lang,type from #_static where type = ? and hienthi > 0 limit 0,1", array('chinh-sach-bao-mat-thong-tin'));
 // var_dump($chinhsachkh).die();
 // List photo in album
-$album = $d->rawQuery("SELECT `id`,`photo`,`noidungvi` FROM `table_photo` WHERE type = ?",array('album'));
+$album = $d->rawQuery("SELECT `id`,`photo`,`noidungvi` FROM `table_photo` WHERE type = ?", array('album'));
 // List recruit
 $rclist = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('tuyen-dung'));
 // List introduction
@@ -27,7 +27,7 @@ $tht = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news whe
 $splistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_list where type = ? and hienthi > 0 order by stt,id desc", array('san-pham'));
 
 // Lay ra tat ca san pham 
-$list_all_products = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product");
+// $list_all_products = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product limit 5");
 // Danh muc sp cap 1
 $listproduct = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_list where type = ? and hienthi > 0 order by stt,id desc", array('san-pham'));
 // $splistmenu = $d->rawQuery("select #_product_list.id, #_product_list.tenvi, #_product_list.tenkhongdau$lang, #_product_list.photo,

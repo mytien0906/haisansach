@@ -36016,7 +36016,9 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     font-size: .875rem;
     border-radius: 50%;
 }
-
+.pagination-home .pagination .page-item .page-link img{
+    width: 9px;
+}
 .pagination-home .pagination .page-item.active .page-link {
     color: #ffffff;
     background-color: #555555;
@@ -36191,6 +36193,7 @@ div.menu_mobi, div.menu_mobi_add {
     padding-left: 10px;
     width: 20%;
     float: left;
+    padding-bottom: 35px;
 }
 
 

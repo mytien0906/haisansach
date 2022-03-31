@@ -1169,16 +1169,17 @@ class Functions
 	}
 
 	/* Pagination */
-	public function pagination($totalq = 0, $per_page = 5, $page = 1, $url = '?')
+	public function pagination($totalq = 0, $per_page = 10, $page = 1, $url = '?')
 	{
 		$urlpos = strpos($url, "?");
 		$url = ($urlpos) ? $url . "&" : $url . "?";
 		$total = $totalq;
 		$adjacents = "2";
-		$firstlabel = "First";
-		$prevlabel = "<img src='assets/images/angles-left-solid.svg' alt='' style='width:10px'>";
-		$nextlabel = "<img src='assets/images/angles-right-solid.svg' alt='' style='width:10px'>";
-		$lastlabel = "Last";
+		// $firstlabel = "First";
+
+		$prevlabel = "<img src='assets/images/angles-left-solid.svg' alt=''>";
+		$nextlabel = "<img src='assets/images/angles-right-solid.svg' alt=''>";
+		// $lastlabel = "Last";
 		$page = ($page == 0 ? 1 : $page);
 		$start = ($page - 1) * $per_page;
 		$prev = $page - 1;
@@ -1190,13 +1191,11 @@ class Functions
 		if ($lastpage > 1) {
 			$pagination .= "<ul class='pagination justify-content-center mb-0'>";
 			// $pagination .= "<li class='page-item'><a class='page-link'>Page {$page} / {$lastpage}</a></li>";
-
-				// $pagination .= "<li class='page-item'><a class='page-link' href='{$this->getCurrentPageURL()}'>{$firstlabel}</a></li>";
-				$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$prev}'>{$prevlabel}</a></li>";
-			
-
+			$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$prev}'>{$prevlabel}</a></li>";
+			if ($page > 1) {
+				// $pagination.= "<li class='page-item'><a class='page-link' href='{$this->getCurrentPageURL()}'>{$firstlabel}</a></li>";
+			}
 			if ($lastpage < 7 + ($adjacents * 2)) {
-				
 				for ($counter = 1; $counter <= $lastpage; $counter++) {
 					if ($counter == $page) $pagination .= "<li class='page-item active'><a class='page-link'>{$counter}</a></li>";
 					else $pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$counter}'>{$counter}</a></li>";
@@ -1235,17 +1234,17 @@ class Functions
 					}
 				}
 			}
-
-			if ($page < $counter - 1) {
-				$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$next}'>{$nextlabel}</a></li>";
-				// $pagination .= "<li class='page-item'><a class='page-link' href='{$url}p=$lastpage'>{$lastlabel}</a></li>";
-			}
-
+			// if ($page < $counter - 1) {
+			// 	$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$next}'>{$nextlabel}</a></li>";
+			// 	// $pagination.= "<li class='page-item'><a class='page-link' href='{$url}p=$lastpage'>{$lastlabel}</a></li>";
+			// }
+			$pagination .= "<li class='page-item'><a class='page-link' href='{$url}p={$next}'>{$nextlabel}</a></li>";
 			$pagination .= "</ul>";
 		}
 
 		return $pagination;
 	}
+
 
 	/* UTF8 convert */
 	public function utf8convert($str = '')
