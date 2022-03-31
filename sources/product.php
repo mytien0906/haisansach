@@ -8,7 +8,6 @@ if (!defined('SOURCES')) die("Error");
 @$ids = htmlspecialchars($_GET['ids']);
 @$idb = htmlspecialchars($_GET['idb']);
 
-
 if ($id != '') {
 	/* Lấy sản phẩm detail */
 	$row_detail = $d->rawQueryOne("select * from #_product where id = ? and type = ? and hienthi > 0 limit 0,1", array($id, $type));
@@ -118,7 +117,7 @@ if ($id != '') {
 } else if ($idl != '') {
 	/* Lấy cấp 1 detail */
 	$pro_list = $d->rawQueryOne("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
-	var_dump($pro_list);
+	// var_dump($pro_list);
 	$noidung_page = $pro_list['noidung' . $lang];
 	$mota_page = $pro_list['mota' . $lang];
 	/* SEO */

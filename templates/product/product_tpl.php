@@ -5,67 +5,28 @@
     </h3>
 </div>
 <div class="content-main w-clear">
-    <?php if (isset($list_all_products) && count($list_all_products) > 0) { ?>
-        <div class="row list-product">
-            <?php foreach ($list_all_products as $key => $value) { ?>
-                <div class="col-2 cover-content">
-                    <a href="<?= $value[$sluglang] ?>" class="image">
-                        <span>
-                            <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="<?= $value['ten' . $lang] ?>" /></span>
-                    </a>
-                    <a href="<?php echo $value['tenkhongdauvi'] ?>">
-                        <h6><?= $value["tenvi"] ?></h6>
-                    </a>
-                    <?php if ($value['motanganvi']) { ?>
-                        <div class="product-des-wrap">
-                            <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
-                            </p>
-                        </div>
-                    <?php } ?>
-                    <div class="price">
-                        <div>
-                            <p><?= $func->convertPrice($value['gia']) ?></p>
-                            <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
-                        </div>
-                        <div class="discount"><?= $func->convertPrice($value['giakm']) ?>%</div>
-                    </div>
-                    <button class="buy">Liên hệ</button>
-                </div>
-            <?php } ?>
+    <!-- Ul -->
+    <ul class="nav nav-tabs tab-product" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected="true">Tất cả</a>
+        </li>
+        <?php if (isset($listproduct) && count($listproduct) > 0) {
+            foreach ($listproduct as $key => $value) { ?>
+                <li>
+                    <?php $_SESSION['idl'] = $value['idl']; ?>
+                    <a class="nav-link" idl="<?= $value['id'] ?>" data-toggle="tab" href="<?= $value[$sluglang]?>?idl=<?= $value['id'] ?>" role="tab" aria-controls=""><?= $value['ten' . $lang] ?></a>
+                </li>
+        <?php }
+        } ?>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fad show active" id="" role="tabpanel" aria-labelledby="">
+            <div class="row list-product">
+            </div>
+
         </div>
-    <?php } else if (isset($pro_list) && count($pro_list) > 0) { ?>
-        <div class="row list-product">
-            <?php foreach ($pro_list as $key => $value) { ?>
-                <div class="col-2 cover-content">
-                    <a href="<?= $value[$sluglang] ?>" class="image">
-                        <span>
-                            <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="<?= $value['ten' . $lang] ?>" /></span>
-                    </a>
-                    <a href="<?php echo $value['tenkhongdauvi'] ?>">
-                        <h6><?= $value["tenvi"] ?></h6>
-                    </a>
-                    <?php if ($value['motanganvi']) { ?>
-                        <div class="product-des-wrap">
-                            <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
-                            </p>
-                        </div>
-                    <?php } ?>
-                    <div class="price">
-                        <div>
-                            <p><?= $func->convertPrice($value['gia']) ?></p>
-                            <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
-                        </div>
-                        <div class="discount"><?= $func->convertPrice($value['giakm']) ?>%</div>
-                    </div>
-                    <button class="buy">Liên hệ</button>
-                </div>
-            <?php } ?>
-        </div>
-    <?php } else { ?>
-        <div class="alert alert-warning" role="alert">
-            <strong><?= khongtimthayketqua ?></strong>
-        </div>
-    <?php } ?>
+    </div>
     <div class="clear"></div>
     <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
 </div>
@@ -79,3 +40,49 @@
         <!-- <div id="toc-content"><?= htmlspecialchars_decode($noidung_page) ?></div> -->
     </div>
 <?php } ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha512-k2WPPrSgRFI6cTaHHhJdc8kAXaRM4JBFEDo1pPGGlYiOyv4vnA0Pp0G5XMYYxgAPmtmv/IIaQA6n5fLAyJaFMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        showNews();
+        $('.nav-link').click(function() {
+            var idl = $(this).attr('idl');
+            var type = $(this).attr('type');
+            $.ajax({
+                url: "ajax/ajax_product.php",
+                method: "GET",
+                data: {
+                    idl: idl,
+                    // idc: idc,
+                    type: type
+                },
+                success: function(data) {
+                    $('.list-product').html(data);
+                }
+
+            });
+        });
+
+        function showNews() {
+
+            var idl = "<?= $_SESSION['idl']; ?>";
+            
+            // var idc = "<?= $_SESSION['cate_id']; ?>";
+            // var page = "<?= $_SESSION['page']; ?>";
+            var type = "<?= $_SESSION['type']; ?>";
+
+            $.ajax({
+                url: "ajax/ajax_product.php",
+                method: "GET",
+                data: {
+                    idl: idl,
+                    // idc: idc,
+                    type: type,
+                },
+                success: function(data) {
+                    $('.list-product').html(data);
+                }
+
+            });
+        }
+    })
+</script>
