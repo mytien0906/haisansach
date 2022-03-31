@@ -6,35 +6,13 @@
 
 <div class="content-main w-clear">
     <ul class="nav nav-tabs tab-product" id="myTab" role="tablist">
+        <li><a class="nav-link active" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected=" <?php if ($key == 0) {
+                                                                                                                                                        echo "true";
+                                                                                                                                                    } else {
+                                                                                                                                                        echo "false";
+                                                                                                                                                    } ?>">Tất cả</a></li>
 
-        <?php if (isset($product) && count($product) > 0) { ?>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active
-                <?php
-                $_SESSION['list_id'] = $product[0]['id_list'];
-                ?>
-                " idl="<?= $product[0]['id_list'] ?>" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected=" <?php if ($key == 0) {
-                                                                                                                                    echo "true";
-                                                                                                                                } else {
-                                                                                                                                    echo "false";
-                                                                                                                                } ?>">Tất cả</a>
-            </li>
-        <?php }
-        ?>
-        <?php foreach ($get_product_cate as $key => $item) {
-        ?>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link <?php if ($key == 0) {
-                                        $_SESSION['cate_id'] = $item['id'];
-                                    } ?>" idc="<?= $item['id'] ?>" data-toggle="tab" href="#" role="tab" aria-controls="" type-ne="<?= $item['type'] ?>" aria-selected=" <?php if ($key == 0) {
-                                                                                                                                                                                echo "true";
-                                                                                                                                                                            } else {
-                                                                                                                                                                                echo "false";
-                                                                                                                                                                            } ?>">
-                    <?= $item['tenvi'] ?>
-                </a>
-            </li>
-        <?php } ?>
+
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fad show active" id="" role="tabpanel" aria-labelledby="">

@@ -24,8 +24,12 @@ $nmlistmenu = $d->rawQuery("select ten$lang, type, tenkhongdau$lang, id,photo fr
 
 $tht = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('thong-tin'));
 // New query
-// $product_list = $d->rawQuery("select tenvi, type, tenkhongdau$lang, id,photo from table_product_list where type = 'san-pham' and hienthi > 0 order by stt,id desc");
 $splistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_list where type = ? and hienthi > 0 order by stt,id desc", array('san-pham'));
+
+// Lay ra tat ca san pham 
+$list_all_products = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product");
+// Danh muc sp cap 1
+$listproduct = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_list where type = ? and hienthi > 0 order by stt,id desc", array('san-pham'));
 // $splistmenu = $d->rawQuery("select #_product_list.id, #_product_list.tenvi, #_product_list.tenkhongdau$lang, #_product_list.photo,
 //  #_product_cat.id, #_product_cat.tenvi, #_product_cat.tenkhongdau$lang, #_product_cat.photo 
 //  FROM #_product_list RIGHT JOIN #_product_cat ON #_product_list.id = #_product_cat.id_list 

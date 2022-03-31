@@ -83,6 +83,22 @@
                                     </ul> -->
                             <?php } ?>
                             </li>
+                            <li class="menulicha"><a href="san-pham" title="Sản phẩm">Sản phẩm
+                                    <?php if ($splistmenu) {
+                                    ?>
+                                        <i class="desktop-li fal fa-angle-down"></i>
+                                    <?php } ?>
+                                    <?php
+                                    if (isset($splistmenu)) { ?>
+                                        <ul class="menu_cap_con">
+                                            <?php foreach ($splistmenu as $key => $value) { ?>
+                                                <li><a href="<?= $value[$sluglang] ?>"><?= $value['ten' . $lang] ?></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                    <?php } ?>
+                                </a>
+
+                            </li>
 
                             <li class="menulicha <?= $com == 'khuyen-mai' ? 'active' : '' ?>"><a href="khuyen-mai" title="KHUYẾN MÃI">Khuyến mãi
                                     <!-- <?php if ($splistmenuhouse) { ?>

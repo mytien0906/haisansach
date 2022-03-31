@@ -117,6 +117,7 @@ if ($id != '') {
 } else if ($idl != '') {
 	/* Lấy cấp 1 detail */
 	$pro_list = $d->rawQueryOne("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
+	/* Lấy cấp 2 detail */
 	$get_product_cate = $d->rawQuery("select * FROM table_product_cat WHERE type =? and id_list = ?", array($type, $idl));
 	
 	$pro_cat = $d->rawQuery("select id, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_cate where id = ? and type = ? limit 0,1", array($get_product_cate['id_cat'], $type));

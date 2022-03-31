@@ -24,6 +24,9 @@ $sql = "select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motan
 `giamoi`,`type` from table_product where $where order by table_product.stt,table_product.id desc limit 5";
 $list_pro_cat = $d->rawQuery($sql, $params);
 
+
+
+// Hien thi ra giao dien
 $output = "";
 if (isset($list_pro_cat) && count($list_pro_cat) > 0) {
 	foreach ($list_pro_cat as $key => $value) {
