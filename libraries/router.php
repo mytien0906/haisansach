@@ -303,9 +303,9 @@
  	 
 		case 'tim-kiem':
 			$source = "search";
-			$template = "duan/news";
+			$template = "news/searchs";
 			$seo->setSeo('type','object');
-			$title_crumb = timkiem;
+			$title_crumb = "Kết quả tìm kiếm cho từ khóa " ;
 			break;
 
 		/*case 'tags-san-pham':

@@ -1,14 +1,13 @@
 <?php
-session_start();
-var_dump($_GET['idl']);
+
 ?>
 <div class="header-cachtop">
     <div class="header">
         <div class="header background-head">
             <div class="top-header">
                 <div class="container">
-                    <form class="form-inline my-2 my-lg-0 frm_timkiem">
-                        <input autocomplete="off" type="text" class="input" id="keyword" placeholder="Bạn tìm gì hôm nay" onkeypress="doEnter(event,'keyword');">
+                    <form action="tim-kiem" method="get" class="form-inline my-2 my-lg-0 frm_timkiem">
+                        <input name="keyword" autocomplete="off" type="text" class="input" id="keyword" placeholder="Bạn tìm gì hôm nay" onkeypress="doEnter(event,'keyword');">
                         <button type="submit" value="" class="nut_tim" onclick="onSearch('keyword');"><i class="fal fa-search"></i></button>
 
                     </form>
@@ -65,11 +64,13 @@ var_dump($_GET['idl']);
                                 </a>
                                 <?php if ($splistmenu) { ?>
                                     <ul class="sub-menu-list">
-                                        <?php foreach ($splistmenu as $key => $value) { ?>
+                                        <?php foreach ($splistmenu as $key => $value) {
+                                            $spcatemenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_cat where type = ? and #_product_cat.id_list = ? and  hienthi > 0 order by stt,id desc", array('san-pham', $value['id']));
+                                        ?>
+                                            
                                             <li class="sub-menu-item">
-                                                <?php $_SESSION['idl'] = $value['id'] ?>
                                                 <a href="<?= $value[$sluglang] ?>?idl=<?= $value['id'] ?>"><?= $value['ten' . $lang] ?></a>
-                                                <?php if (isset($spcatemenu)) {
+                                                <?php if (isset($spcatemenu) && count($spcatemenu) > 0) {
                                                 ?>
                                                     <ul class="sub-menu-cat">
                                                         <?php foreach ($spcatemenu as $k => $v) { ?>

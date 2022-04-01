@@ -3,9 +3,10 @@
 
 	/* Tìm kiếm sản phẩm */
 	if(isset($_GET['keyword'])){
+
+		// var_dump($_GET['keyword']);
 		$tukhoa = htmlspecialchars($_GET['keyword']);
 		$tukhoa = $func->changeTitle($tukhoa);
-
 		if($tukhoa){
 			$where = "";
 			$where = " (ten$lang LIKE ? or tenkhongdauvi LIKE ? or tenkhongdauen LIKE ?) and hienthi > 0";
@@ -16,7 +17,7 @@
 			$startpoint = ($curPage * $per_page) - $per_page;
 			$limit = " limit ".$startpoint.",".$per_page;
 			$sql = "select photo,ten$lang, tenkhongdauvi, tenkhongdauen, mota$lang, id,gia from #_product where $where order by stt,id desc $limit";
-			$news = $d->rawQuery($sql,$params);
+			$searchKey = $d->rawQuery($sql,$params);
 			$sqlNum = "select count(*) as 'num' from #_product where $where order by stt,id desc";
 			$count = $d->rawQueryOne($sqlNum,$params);
 			$total = $count['num'];

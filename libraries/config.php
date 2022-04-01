@@ -35,7 +35,7 @@
 			'host' => 'localhost',
 			'username' => 'root',
 			'password' => '',
-			'dbname' => 'haisan_sota',
+			'dbname' => 'hai',
 			'port' => 3306,
 			'prefix' => 'table_',
 			'charset' => 'utf8'

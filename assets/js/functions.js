@@ -1,19 +1,18 @@
 // Convert VND
 
 
-function modalNotify(text){
+function modalNotify(text) {
     $("#popup-notify").find(".modal-body").html(text);
     $('#popup-notify').modal('show');
 }
 
-function ValidationFormSelf(ele=''){
-    if(ele){
-        $("."+ele).find("input[type=submit]").removeAttr("disabled");
+function ValidationFormSelf(ele = '') {
+    if (ele) {
+        $("." + ele).find("input[type=submit]").removeAttr("disabled");
         var forms = document.getElementsByClassName(ele);
-        var validation = Array.prototype.filter.call(forms,function(form){
-            form.addEventListener('submit', function(event){
-                if(form.checkValidity() === false)
-                {
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
                     event.preventDefault();
                     event.stopPropagation();
                 }
@@ -23,17 +22,17 @@ function ValidationFormSelf(ele=''){
     }
 }
 
-function loadPagingAjax(url='',eShow='',id='',id_post=0){
-    if($(eShow).length && url){
+function loadPagingAjax(url = '', eShow = '', id = '', id_post = 0) {
+    if ($(eShow).length && url) {
         $.ajax({
             url: url,
             type: "GET",
             data: {
                 eShow: eShow,
-                id:id,
-                id_post:id_post
+                id: id,
+                id_post: id_post
             },
-            success: function(result){
+            success: function (result) {
                 $(eShow).html(result);
                 /*if(id!=''){
                     $('html, body').animate({
@@ -44,49 +43,93 @@ function loadPagingAjax(url='',eShow='',id='',id_post=0){
         });
     }
 }
- 
 
 
-function doEnter(event,obj){
 
-    if(event.keyCode == 13 || event.which == 13) onSearch(obj);
+// function doEnter(event,obj){
+
+//     if(event.keyCode == 13 || event.which == 13) onSearch(obj);
+// }
+
+
+
+// function onSearch(obj){     
+//     console.log(keyword);      
+//     var keyword = $("#"+obj).val();
+
+//     if(keyword!=''){
+//         modalNotify(LANG['no_keywords']);
+//         return false;
+//     }else{
+//         location.href = "tim-kiem?keyword="+encodeURI(keyword);
+//         loadPage(document.location);            
+//     }
+// }
+function filter_category(url) {
+    if ($(".filer-category").length > 0 && url != '') {
+        var id = '';
+        var value = 0;
+
+        $(".filer-category").each(function () {
+            id = $(this).attr("id");
+            if (id) {
+                value = parseInt($("#" + id).val());
+                if (value) {
+                    url += "&" + id + "=" + value;
+                }
+            }
+        })
+    }
+
+    return url;
 }
-
-function onSearch(obj){           
-    var keyword = $("#"+obj).val();
-    
-    if(keyword==''){
-        modalNotify(LANG['no_keywords']);
+function doEnter(evt, obj, url) {
+    if (url == '') {
+        notifyDialog("Đường dẫn không hợp lệ");
         return false;
-    }else{
-        location.href = "tim-kiem?keyword="+encodeURI(keyword);
-        loadPage(document.location);            
+    }
+
+    if (evt.keyCode == 13 || evt.which == 13) onSearch(obj, url);
+}
+function onSearch(obj, url) {
+    if (url == '') {
+        notifyDialog("Đường dẫn không hợp lệ");
+        return false;
+    }
+    else {
+        var keyword = $("#" + obj).val();
+        url = filter_category(url);
+
+        if (keyword) {
+            url += "&keyword=" + encodeURI(keyword);
+        }
+
+        window.location = filter_category(url);
     }
 }
 
-function goToByScroll(id){
+function goToByScroll(id) {
     var offsetMenu = 0;
     id = id.replace("#", "");
-    if($(".menu").length) offsetMenu = $(".menu").height();
+    if ($(".menu").length) offsetMenu = $(".menu").height();
     $('html,body').animate({
         scrollTop: $("#" + id).offset().top - (offsetMenu * 2)
     }, 'slow');
 }
 
-function update_cart(id=0,code='',quantity=1){
-    if(id){
+function update_cart(id = 0, code = '', quantity = 1) {
+    if (id) {
         var ship = $(".price-ship").val();
 
         $.ajax({
             type: "POST",
             url: "ajax/ajax_cart.php",
             dataType: 'json',
-            data: {cmd:'update-cart',id:id,code:code,quantity:quantity,ship:ship},
-            success: function(result){
-                if(result)
-                {
-                    $('.load-price-'+code).html(result.gia);
-                    $('.load-price-new-'+code).html(result.giamoi);
+            data: { cmd: 'update-cart', id: id, code: code, quantity: quantity, ship: ship },
+            success: function (result) {
+                if (result) {
+                    $('.load-price-' + code).html(result.gia);
+                    $('.load-price-new-' + code).html(result.giamoi);
                     $('.price-temp').val(result.temp);
                     $('.load-price-temp').html(result.tempText);
                     $('.price-total').val(result.total);
@@ -97,45 +140,44 @@ function update_cart(id=0,code='',quantity=1){
     }
 }
 
-function load_district(id=0){
+function load_district(id = 0) {
     $.ajax({
         type: 'post',
         url: 'ajax/ajax_district.php',
-        data: {id_city:id},
-        success: function(result){
+        data: { id_city: id },
+        success: function (result) {
             $(".select-district").html(result);
-            $(".select-wards").html('<option value="">'+LANG['wards']+'</option>');
+            $(".select-wards").html('<option value="">' + LANG['wards'] + '</option>');
         }
     });
 }
 
-function load_wards(id=0){
+function load_wards(id = 0) {
     $.ajax({
         type: 'post',
         url: 'ajax/ajax_wards.php',
-        data: {id_district:id},
-        success: function(result){
+        data: { id_district: id },
+        success: function (result) {
             $(".select-wards").html(result);
         }
     });
 }
 
-function load_ship(id=0){
-    if(SHIP_CART){
+function load_ship(id = 0) {
+    if (SHIP_CART) {
         $.ajax({
             type: "POST",
             url: "ajax/ajax_cart.php",
             dataType: 'json',
-            data: {cmd:'ship-cart',id:id},
-            success: function(result){
-                if(result)
-                {
+            data: { cmd: 'ship-cart', id: id },
+            success: function (result) {
+                if (result) {
                     $('.load-price-ship').html(result.shipText);
                     $('.load-price-total').html(result.totalText);
                     $('.price-ship').val(result.ship);
                     $('.price-total').val(result.total);
-                }   
+                }
             }
-        }); 
+        });
     }
 }

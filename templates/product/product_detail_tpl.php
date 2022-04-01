@@ -15,9 +15,12 @@
     <div class="wrap_right_detail">
         <div class="grid-pro-detail w-clear">
             <div class="left-pro-detail w-clear">
-                <div class="carousel-detail-product">
-                    <a id="Zoom-1" class="MagicZoom" data-options="zoomMode: off; hint: off; rightClick: true; selectorTrigger: hover; expandCaption: false; history: false;" href="<?= THUMBS ?>/760x540x2/<?= UPLOAD_PRODUCT_L . $row_detail['photo'] ?>" title="<?= $row_detail['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/760x540x2/assets/images/noimage.png';" src="<?= THUMBS ?>/760x540x2/<?= UPLOAD_PRODUCT_L . $row_detail['photo'] ?>" alt="<?= $row_detail['ten' . $lang] ?>"></a>
+                <div class="">
+                    <a  href="<?= THUMBS ?>/760x540x2/<?= UPLOAD_PRODUCT_L . $row_detail['photo'] ?>" title="<?= $row_detail['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/760x540x2/assets/images/noimage.png';" src="<?= THUMBS ?>/760x540x2/<?= UPLOAD_PRODUCT_L . $row_detail['photo'] ?>" alt="<?= $row_detail['ten' . $lang] ?>"></a>
                 </div>
+                <!-- <div class="carousel-detail-product">
+                    <a id="Zoom-1" class="MagicZoom" data-options="zoomMode: off; hint: off; rightClick: true; selectorTrigger: hover; expandCaption: false; history: false;" href="<?= THUMBS ?>/760x540x2/<?= UPLOAD_PRODUCT_L . $row_detail['photo'] ?>" title="<?= $row_detail['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/760x540x2/assets/images/noimage.png';" src="<?= THUMBS ?>/760x540x2/<?= UPLOAD_PRODUCT_L . $row_detail['photo'] ?>" alt="<?= $row_detail['ten' . $lang] ?>"></a>
+                </div> -->
 
                 <!-- <?php if ($hinhanhsp) {
                             if (count($hinhanhsp) > 0) { ?>
@@ -144,7 +147,7 @@
                 </div>
             <?php } ?>
         </div> -->
-        <div class="autoplay-product-list">
+        <div class="autoplay-product-list auto-height">
             <?php foreach ($product as $k => $v) { ?>
                 <div class="cover-content">
                     <a class="image" href="<?= $v['tenkhongdauvi'] ?>">
@@ -165,7 +168,7 @@
                         </div>
                         <div class="discount"><?= $func->convertPrice($v['giakm']) ?>%</div>
                     </div>
-                    <button class="add"><span>Thêm</span></button>
+                    <a class="add" href="lien-he"><span>Liên hệ</span></a>
                 </div>
             <?php } ?>
         </div>

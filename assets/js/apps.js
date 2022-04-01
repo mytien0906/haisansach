@@ -18,7 +18,7 @@ $(".paging-product-index").each(function () {
     let idl = $(this).attr('data-id');
     loadPagingAjax("ajax/ajax_product_paging.php?perpage=6", '.paging-product-index', '#load_pro_', idl);
 });
-/* Paging category ajax 
+//  Paging category ajax 
     if($(".paging-product-category").exists()){
         $(".paging-product-category").each(function(){
             var list = $(this).data("list");
@@ -36,7 +36,7 @@ $(".paging-product-index").each(function () {
             loadPagingAjax("ajax/ajax_product.php?perpage=8&idList="+list+"&idCat="+cat+"&idItem="+item+"&namelist="+namelist,'.paging-product-category-'+cat);
         });
     }
-*/
+
 /* Load more */
 NN_FRAMEWORK.loadmore = function () {
     $('.load-more').click(function () {
@@ -261,31 +261,41 @@ $(document).ready(function () {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 20000,
+        autoplaySpeed: 2000,
         centerMode: false,
         centerPadding: 0,
         prevArrow: true,
         nextArrow: true,
-        responsive: [{
-            breakpoint: 768,
-            infinite: true,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerMode: true,
-                centerPadding: 0,
-            }
-        },
-        {
-            breakpoint: 500,
-            infinite: true,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerMode: true,
-                centerPadding: 0,
-            }
-        },
+        responsive: [
+            {
+                breakpoint: 992,
+                infinite: true,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: 0,
+                }
+            }, {
+                breakpoint: 768,
+                infinite: true,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: 0,
+                }
+            },
+            {
+                breakpoint: 500,
+                infinite: true,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: 0,
+                }
+            },
         ]
 
     });
