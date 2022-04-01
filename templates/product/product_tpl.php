@@ -1,8 +1,8 @@
 <?php
 $idl = ($_GET['idl']);
-if($idl != null){
-    $_SESSION['idl'] = $idl;
-}
+// if($idl != null){
+//     $_SESSION['idl'] = $idl;
+// }
 $idc = ($_GET['idc']);
 ?>
 

@@ -1,3 +1,6 @@
+<?php
+$linkMan = "tim-kiem";
+?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 <?php if (count($slider)) { ?>
     <div class="wrap_slider">
@@ -20,24 +23,30 @@
                             </li>
                         <?php } ?>
                     </ul>
-                <?php } ?>
+                <?php } ?> -->
+            <!-- <form action="tim-kiem" method="get">
                 <div class="frm_timkiem">
-                    <input type="text" class="input" id="keyword" placeholder="Tìm kiếm" onkeypress="doEnter(event,'keyword');" >
-                    <button type="submit" value="" class="nut_tim" onclick="onSearch('keyword');"><i class="far fa-search"></i></button>
+                    <input class="form-control form-control-navbar text-sm" type="search" id="keyword" name="keyword" placeholder="Tìm kiếm" aria-label="Tìm kiếm">
+                    <div class="input-group-append bg-primary rounded-right">
+                        <button class="btn btn-navbar text-white" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
-            </div> -->
-            <div class="slideshow">
-                <div class="autoplay">
-                    <?php foreach ($slider as $v) { ?>
-                        <div>
-                            <a href="<?= $v['link'] ?>" target="_blank" title="<?= $v['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/910x380x2/assets/images/noimage.png';" src="<?= THUMBS ?>/910x380x1/<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" title="<?= $v['ten' . $lang] ?>" /></a>
-
-                        </div>
-                    <?php } ?>
-                </div>
-
-            </div>
+            </form> -->
         </div>
+        <div class="slideshow">
+            <div class="autoplay">
+                <?php foreach ($slider as $v) { ?>
+                    <div>
+                        <a href="<?= $v['link'] ?>" target="_blank" title="<?= $v['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/910x380x2/assets/images/noimage.png';" src="<?= THUMBS ?>/910x380x1/<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" title="<?= $v['ten' . $lang] ?>" /></a>
+
+                    </div>
+                <?php } ?>
+            </div>
+
+        </div>
+    </div>
     </div>
 <?php } ?>
 <?php /*if($banner!='') { ?>
