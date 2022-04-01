@@ -1,23 +1,23 @@
 <div class="boxfooter_container">
     <div class="fixwidth">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <h4 class="title">
                     Hải sản Hoàng Gia
                 </h4>
                 <ul class="footer-list">
                     <li><a href="goc-am-thuc">- Góc ẩm thực</a></li>
                     <li><a href="tin-tuc">- Tin tức</a></li>
-                    <li><a href="tuyen-dung">- Tuyển dụng</a></li>
+                    <li><a href="tuyendung">- Tuyển dụng</a></li>
                     <li><a href="lien-he">- Liên hệ</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <div class="slogan">
                     <a id="goidien" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
-                        <img src="upload/photo/icons8-phone.svg" alt="images">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/icons8-phone.svg" alt="images">
                     </a>
-                    <a href="" class="slogan-text">
+                    <a href="lien-he" class="slogan-text">
                         <h4 class="title">
                             Đơn hàng lớn
                             <br>
@@ -26,12 +26,12 @@
                     </a>
                 </div>
                 <p class="hotline">
-                    <a id="goidien" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
+                    <a id="goidien" onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
                         Hotline: <?= $optsetting['hotline'] ?>
                     </a>
                 </p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 pl-110" >
                 <a href="" class="slogan-text">
                     <h4 class="title">
                         Theo Dõi Chúng Tôi
@@ -75,7 +75,7 @@
                         </li>
                         <li>
                             <a id="instagram" href="<?= $optsetting['instagram'] ?>" title="title">
-                                <img src="upload/photo/zalo.svg" alt="">
+                                <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/zalo.svg" alt="">
                             </a>
                         </li>
 
@@ -84,8 +84,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3">
-                <a href=""><img src="upload/photo/ministry-industry-trade.png" alt="" width="60%"></a>
+            <div class="col-md-3 pl-110" >
+                <a href=""><img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/ministry-industry-trade.png" alt="" width="60%"></a>
             </div>
         </div>
         <!-- <div class="boxfooter_left">

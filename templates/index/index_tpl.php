@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!-- San pham moi nhat -->
 <div class="new-product">
     <div class="fixwidth">
@@ -12,26 +9,31 @@ session_start();
             foreach ($newproduct as $key => $value) {
             ?>
                 <div class="col-2 cover-content">
-                    <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
-                        <img src="/upload/product/<?= $value['photo'] ?>" alt="">
+
+                    <a href="<?= $value[$sluglang] ?>" class="image">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
-                    <a href="$value['tenkhongdauvi']">
-                        <h6><?= $value["tenvi"] ?></h6>
-                    </a>
-                    <?php if ($value['motanganvi']) { ?>
-                        <div class="product-des-wrap">
-                            <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
-                            </p>
+                    <div class="info-wrap">
+                        <div class="full-height">
+                        <a href="<?php echo $value['tenkhongdauvi'] ?>">
+                            <h6><?= $value["tenvi"] ?></h6>
+                        </a>
+                        <?php if ($value['motanganvi']) { ?>
+                            <div class="product-des-wrap">
+                                <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
+                                </p>
+                            </div>
+                        <?php } ?>
                         </div>
-                    <?php } ?>
-                    <div class="price">
-                        <div>
-                            <p><?= $value['gia'] ?></p>
-                            <p class="price-discount"><?= $value['giamoi'] ?></p>
+                        <div class="price">
+                            <div>
+                                <p><?= $func->convertPrice($value['gia']) ?></p>
+                                <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
+                            </div>
+                            <div class="discount"><?= $value['giakm'] ?>%</div>
                         </div>
-                        <div class="discount"><?= $value['giakm'] ?>%</div>
+                        <a class="buy" href="lien-he">Liên hệ</a>
                     </div>
-                    <button class="buy">Liên hệ</button>
                 </div>
             <?php }  ?>
 
@@ -51,28 +53,32 @@ session_start();
             ?>
                 <div class="col-2 cover-content">
                     <div class="product-img">
-                        <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
-                            <img src="/upload/product/<?= $value['photo'] ?>" alt="">
+                        <a href="<?php $value[$sluglang] ?>" class="image">
+                            <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                         </a>
-                        <img class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
+                        <img windown.location.href="<?php $value[$sluglang] ?>" class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
                     </div>
-                    <a href="$value['tenkhongdauvi']">
-                        <h6><?= $value["tenvi"] ?></h6>
-                    </a>
-                    <?php if ($value['motanganvi']) { ?>
-                        <div class="product-des-wrap">
-                            <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
-                            </p>
+                    <div class="info-wrap">
+                        <div class="full-height">
+                            <a href="<?= $value[$sluglang] ?>">
+                                <h6><?= $value["tenvi"] ?></h6>
+                            </a>
+                            <?php if ($value['motanganvi']) { ?>
+                                <div class="product-des-wrap">
+                                    <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
+                                    </p>
+                                </div>
+                            <?php } ?>
                         </div>
-                    <?php } ?>
-                    <div class="price">
-                        <div>
-                            <p><?= $value['gia'] ?></p>
-                            <p class="price-discount"><?= $value['giamoi'] ?></p>
+                        <div class="price">
+                            <div>
+                                <p><?= $func->convertPrice($value['gia']) ?></p>
+                                <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
+                            </div>
+                            <div class="discount"><?= $value['giakm'] ?>%</div>
                         </div>
-                        <div class="discount"><?= $value['giakm'] ?>%</div>
+                        <a class="buy" href="lien-he">Liên hệ</a>
                     </div>
-                    <button class="buy">Liên hệ</button>
                 </div>
             <?php }  ?>
         </div>
@@ -81,23 +87,30 @@ session_start();
 <!-- Danh muc -->
 <div class="category-block">
     <div class="tabbed-content">
-        <h3>Danh mục</h3>
+        <h3>Album hình ảnh</h3>
     </div>
-    <div class="row">
-        <?php foreach ($splistmenu as $key => $value) {
-            // var_dump($splistmenu).die();
-        ?>
-            <div class="col-md-3 cover-content">
-                <div class="product-img">
-                    <a href="<?php $value['tenkhongdauvi'] ?>" class="image">
-                        <img src="/upload/product/<?= $value['photo'] ?>" alt="">
+    <div class="fixwidth">
+
+        <div class="row autoplay-product-list">
+            <?php foreach ($album as $key => $value) {
+            ?>
+                <div class="cover-content">
+                    <a class="image" href="#">
+                        <?php if (isset($value['photo'])) { ?>
+                            <div style="
+                            background-image: url('<?= THUMBS ?>/200x100x1/<?= UPLOAD_PHOTO_L . $value['photo'] ?>');
+                            background-size: cover;
+                            height: 230px;
+                            background-repeat: no-repeat;
+                            background-position: top center;
+                            ">
+                            </div>
+                        <?php } ?>
                     </a>
+
                 </div>
-                <a href="$value['tenkhongdauvi']" class="product-name">
-                    <h6><?= $value["tenvi"] ?></h6>
-                </a>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
 </div>
 <!-- Banner tieu chi -->
@@ -105,13 +118,13 @@ session_start();
     <div class="fixwidth">
         <div class="row">
             <?php foreach ($criteria_list as $key => $value) { ?>
-                
+
                 <div class="col-md-3">
-                        <a href="" class="link-tieu-chi">
-                            <img src="/upload/photo/<?= $value['photo'] ?>" alt="">
-                        </a>
+                    <a href="<?php $value[$sluglang] ?>" class="link-tieu-chi">
+                        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="/upload/photo/<?= $value['photo'] ?>" alt="">
+                    </a>
                 </div>
-        <?php } ?>
+            <?php } ?>
         </div>
     </div>
 </div>

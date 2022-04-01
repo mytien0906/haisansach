@@ -1,4 +1,4 @@
-<div class="title-index"><?=$title_crumb?></div>
+<div class="tabbed-content title"><?=$title_crumb?></div>
 <div class="main_news"><span><?=$row_detail['ten'.$lang]?></span></div>
 <?php /*<div class="time-main"><i class="fas fa-calendar-week"></i><span><?=ngaydang?>: <?=date("d/m/Y h:i A",$row_detail['ngaytao'])?></span></div>*/?>
 <?php if(isset($row_detail['noidung'.$lang]) && $row_detail['noidung'.$lang] != '') { ?>
@@ -20,7 +20,7 @@
 <div id="gallery" style="display:none;">
     <?php foreach($hinhanhtt as $k=>$v){?>
     
-        <img alt="<?=$row_detail['ten'.$lang]?>" src="<?=THUMBS?>/0x350x1/<?=UPLOAD_NEWS_L.$v['photo']?>" data-image="<?=UPLOAD_NEWS_L.$v['photo']?>" data-description="<?=$v['tenvi']?>" style="display:none">
+        <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" alt="<?=$row_detail['ten'.$lang]?>" src="<?=THUMBS?>/0x350x1/<?=UPLOAD_NEWS_L.$v['photo']?>" data-image="<?=UPLOAD_NEWS_L.$v['photo']?>" data-description="<?=$v['tenvi']?>" style="display:none">
     
     <?php }?>
 </div>

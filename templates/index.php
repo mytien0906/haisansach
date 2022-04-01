@@ -13,7 +13,7 @@
             //include TEMPLATE.LAYOUT."slide.php";
             if($source!='index') include TEMPLATE.LAYOUT."breadcrumb.php";
         ?>
-        <div class="<?=($source=='index')?'wrap-home':'wrap-main'?> w-clear"><?php include TEMPLATE.$template."_tpl.php"; ?></div>
+        <div class="<?=($source=='index')?'wrap-home':'fixwidth'?> w-clear"><?php include TEMPLATE.$template."_tpl.php"; ?></div>
         <?php
             include TEMPLATE.LAYOUT."footer.php";
             // include TEMPLATE.LAYOUT."mmenu.php";

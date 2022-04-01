@@ -1,12 +1,11 @@
 <h3 class="tabbed-content title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></h3>
-
 <div class="row">
     <?php if (count($news) > 0) {
-        // var_dump($news).die();
-        ?>
+
+    ?>
         <div class="col-md-12 show-new-page">
             <?php foreach ($news as $k => $v) { ?>
-                <div class="row">
+                <div class="row mb-10 ">
                     <div class="col-md-4">
                         <p class="pic-news scale-img">
                             <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/320x240x1/assets/images/noimage.png';" src="<?= THUMBS ?>/320x240x1/<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>">
@@ -24,17 +23,19 @@
                 </div>
             <?php } ?>
         </div>
+        <div class="load-more" id="btn_xt">
+            Xem thêm
+        </div>
         <div class="clear"></div>
-        <div class="btn-see-more" id="btn_xt">Xem Thêm</div>
-        <!-- <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
+        <!-- <div class="paging-product"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
     <?php } else { ?>
         <div class="alert alert-warning" role="alert">
             <strong><?= khongtimthayketqua ?></strong>
         </div>
     <?php } ?>
-    <div class="alert alert-warning" role="alert">
-            <strong id="alert_kq"></strong>
-    </div>
+    <!-- <div class="alert alert-warning" role="alert">
+        <strong id="alert_kq"></strong>
+    </div> -->
 
 </div>
 <?php if ($noidung_page != '') { ?>
@@ -47,3 +48,5 @@
         <div id="toc-content"><?= htmlspecialchars_decode($noidung_page) ?></div>
     </div>
 <?php } ?>
+<script>
+</script>

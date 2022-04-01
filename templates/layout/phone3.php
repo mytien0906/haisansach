@@ -6,7 +6,7 @@
     width: 40px;
     height: 40px */
     position: relative;
-    margin: 30px 20px;
+    margin: 15px 20px;
     text-align: left;
     width: 45px;
     background: #fff;

@@ -87,22 +87,27 @@
 		array("tbl"=>"product_list","field"=>"idl","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		array("tbl"=>"product_cat","field"=>"idc","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		array("tbl"=>"product_item","field"=>"idi","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
-	
+		array("tbl"=>"product","field"=>"id","source"=>"product","com"=>"san-pham","type"=>"san-pham",'menu'=>true),
 		/* Sản phẩm */
-		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"nha-mau","type"=>"nha-mau",'menu'=>true),
-	 	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"nha-mau","type"=>"nha-mau",'menu'=>true),
+		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"khuyen-mai","type"=>"khuyen-mai",'menu'=>true),
+	 	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"khuyen-mai","type"=>"khuyen-mai",'menu'=>true),
 
 
 		/* Bài viết */		
-		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
+		// array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
 		array("tbl"=>"news_list","field"=>"idl","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tin-tuc","type"=>"tin-tuc",'menu'=>true),
 		array("tbl"=>"","field"=>"id","source"=>"","com"=>"tieu-chi","type"=>"tieu-chi",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"dich-vu","type"=>"dich-vu",'menu'=>true),
+		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"tuyen-dung","type"=>"tuyen-dung",'menu'=>true),
 		array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"thong-tin","type"=>"thong-tin",'menu'=>false),
  
-		/* Trang tĩnh 
-		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),*/
+		/* Trang tĩnh */
+		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"gioi-thieu","type"=>"gioi-thieu",'menu'=>true),
+		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"dang-ky-the-thanh-vien","type"=>"dang-ky-the-thanh-vien",'menu'=>true),
+		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"dang-ky-the-thanh-vien","type"=>"dang-ky-the-thanh-vien",'menu'=>true),
+		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"chinh-sach-khach-hang-than-thiet","type"=>"chinh-sach-khach-hang-than-thiet",'menu'=>true),
+		array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"chinh-sach-bao-mat-thong-tin","type"=>"chinh-sach-bao-mat-thong-tin",'menu'=>true),
 
 		/* Liên hệ */
 		array("tbl"=>"","field"=>"id","source"=>"","com"=>"lien-he","type"=>"",'menu'=>true),
@@ -161,21 +166,56 @@
 			$title_crumb = 'Tính giá xây dựng';
 			break;
 
-		/*case 'gioi-thieu':
+		case 'gioi-thieu':
 			$source = "static";
 			$template = "static/static";
 			$type = $com;
 			$seo->setSeo('type','article');
 			$title_crumb = 'Giới thiệu';
-			break;*/
-	 
-  		case 'gioi-thieu':
-			$source = "news";
-			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
-			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
-			$type = $com;
-			$title_crumb = "Giới thiệu";
 			break;
+		case 'dang-ky-the-thanh-vien':
+			$source = "static";
+			$template = "static/static";
+			$type = $com;
+			$seo->setSeo('type','article');
+			$title_crumb = 'Đăng ký thẻ thành viên';
+			break;
+		case 'chinh-sach-khach-hang-than-thiet':
+			$source = "static";
+			$template = "static/static";
+			$type = $com;
+			$seo->setSeo('type','article');
+			$title_crumb = 'Chính sách khách hàng thân thiết';
+			break;
+		case 'chinh-sach-bao-mat-thong-tin':
+			$source = "static";
+			$template = "static/static";
+			$type = $com;
+			$seo->setSeo('type','article');
+			$title_crumb = 'Chính sách bảo mật thông tin';
+			break;
+		case 'gioi-thieu':
+			$source = "static";
+			$template = "static/static";
+			$type = $com;
+			$seo->setSeo('type','article');
+			$title_crumb = 'Giới thiệu';
+			break;
+		case 'gioi-thieu':
+			$source = "static";
+			$template = "static/static";
+			$type = $com;
+			$seo->setSeo('type','article');
+			$title_crumb = 'Giới thiệu';
+			break;
+	 
+  		// case 'gioi-thieu':
+		// 	$source = "news";
+		// 	$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		// 	$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+		// 	$type = $com;
+		// 	$title_crumb = "Giới thiệu";
+		// 	break;
 
 		case 'tin-tuc':
 			$source = "news";
@@ -183,6 +223,34 @@
 			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
 			$type = $com;
 			$title_crumb = "Tin tức";
+			break;
+		case 'khuyen-mai':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$title_crumb = "Khuyến mãi";
+			break;
+		case 'goc-am-thuc':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$title_crumb = "Góc ẩm thực";
+			break;
+		case 'tuyendung':
+			$source = "static";
+			$template = "static/static";
+			$seo->setSeo('type','article');
+			$type = $com;
+			$title_crumb = "Tuyển dụng";
+			break;
+		case 'tuyen-dung':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$title_crumb = "Tuyển dụng";
 			break;
 		case 'tieu-chi':
 			$source = "news";
@@ -224,13 +292,14 @@
 			$title_crumb = "Video";
 			break;
  
-		/*case 'san-pham':
+		case 'san-pham':
 			$source = "product";
 			$template = isset($_GET['id']) ? "product/product_detail" : "product/product";
-			$seo->setSeo('type','article');
+			$seo->setSeo('type',isset($_GET['id']) ? "article" : "object");
 			$type = 'san-pham';
 			$title_crumb = 'Sản phẩm';
-			break;*/
+			break;
+		
  	 
 		case 'tim-kiem':
 			$source = "search";
@@ -312,4 +381,3 @@
 		include("404.php");
 		exit();
 	}
-?>

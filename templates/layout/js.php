@@ -116,6 +116,9 @@ echo $js->getJs();
     </script>
 
 <?php }*/ ?>
+<script type="text/javascript">
+    
+</script>
 <?php if ($template == 'tinhgia/tinhgia') { ?>
     <script type='text/javascript' src='./assets/js/thicong.js'></script>
     <script type="text/javascript">
@@ -168,6 +171,32 @@ echo $js->getJs();
         });
 
         jQuery(document).ready(function() {
+            var page = 1;
+            var type = "<?= $com ?>"
+            // document.querySelector(".alert-warning").style.display="none";
+            $('#btn_xt').click(function() {
+                page = page + 1;
+                $.ajax({
+                    type: "GET",
+                    url: "ajax/ajax_ppage.php",
+                    data: {
+                        page: page,
+                        type: type,
+                    },
+                    // beforeSend: function(data) {
+                    //     $('#alert_kq').hide();
+                    // },
+                    success: function(data) {
+                        if (data.length == 0) {
+                            // $('#alert_kq').html("Đã xem hết tin tức")
+                            $('#btn_xt').hide();
+                            // document.querySelector(".alert-warning").style.display="block";
+                            return;
+                        }
+                        $('.show-new-page').append(data);
+                    }
+                });
+            });
             jQuery('.catagory-title').on("click", function() {
                 if ($('.catagory-list__fix').css('display') == 'none') {
                     $('.catagory-list__fix').animate({

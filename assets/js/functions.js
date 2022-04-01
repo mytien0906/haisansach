@@ -1,3 +1,6 @@
+// Convert VND
+
+
 function modalNotify(text){
     $("#popup-notify").find(".modal-body").html(text);
     $('#popup-notify').modal('show');

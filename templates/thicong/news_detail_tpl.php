@@ -7,7 +7,7 @@
             <ul class="toc-list" data-toc="article" data-toc-headings="h1, h2, h3"></ul>
         </div>
     </div>
-    <div class="content-main w-clear" id="toc-content"><?=htmlspecialchars_decode($row_detail['noidung'.$lang])?></div>
+    <!-- <div class="content-main w-clear" id="toc-content"><?=htmlspecialchars_decode($row_detail['noidung'.$lang])?></div> -->
     <div class="share">
         <b><?=chiase?>:</b>
         <div class="social-plugin w-clear">

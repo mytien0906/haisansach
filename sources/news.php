@@ -12,7 +12,6 @@
 	{
 		/* Lấy bài viết detail */
 		$row_detail = $d->rawQueryOne("select id, luotxem, ngaytao, id_list, id_cat, id_item, id_sub, type, ten$lang, tenkhongdauvi, tenkhongdauen, noidung$lang, photo, options from #_news where id = ? and type = ? and hienthi > 0 limit 0,1",array($id,$type));
-
 		/* Cập nhật lượt xem */
 		$data_luotxem['luotxem'] = $row_detail['luotxem'] + 1;
 		$d->where('id',$row_detail['id']);
@@ -39,7 +38,7 @@
 		$params = array($id,$row_detail['id_list'],$type);
 
 		$curPage = $get_page;
-		$per_page = 8;
+		$per_page = 3;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
 		// $sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
@@ -117,11 +116,12 @@
 		$params = array($idl,$type);
 
 		$curPage = $get_page;
-		$per_page = 12;
+		$per_page = 2;
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
-		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
-		$news = $d->rawQuery($sql,$params);
+
+		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc limit 1";
+		$news= $d->rawQuery($sql,$params);
 		$sqlNum = "select count(*) as 'num' from #_news where $where order by stt,id desc";
 		$count = $d->rawQueryOne($sqlNum,$params);
 		$total = $count['num'];
@@ -337,13 +337,17 @@
 			}
 		}
 
-		/* Lấy tất cả bài viết */
+		/* Lấy tất cả bài viết trang tin tuc */
 		$where = "";
 		$where = "type = ? and hienthi > 0";
 		$params = array($type);
 
 		$curPage = $get_page;
+<<<<<<< HEAD
 		$per_page = 4;
+=======
+		$per_page = 3;
+>>>>>>> f0197a3017412eb8af28a7688c9d4df1ea067778
 		$startpoint = ($curPage * $per_page) - $per_page;
 		$limit = " limit ".$startpoint.",".$per_page;
 		$sql = "select id, ten$lang, tenkhongdauvi, tenkhongdauen, photo, ngaytao, mota$lang from #_news where $where order by stt,id desc $limit";
@@ -352,7 +356,7 @@
 		$count = $d->rawQueryOne($sqlNum,$params);
 		$total = $count['num'];
 		$url = $func->getCurrentPageURL();
-		$paging = $func->pagination($total,$per_page,$curPage,$url);
+		$pagingaa = $func->pagination($total,$per_page,$curPage,$url);
 
 		/* breadCrumbs */
 		if(isset($title_crumb) && $title_crumb != '') $breadcr->setBreadCrumbs($com,$title_crumb);

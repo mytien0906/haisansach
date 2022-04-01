@@ -297,7 +297,7 @@
 							/* Lấy danh mục cấp 2 */
 							$tkdcap2 = $func->changeTitle($cap2);
 							$idcat = $d->rawQueryOne("select id from #_product_cat where tenkhongdauvi = ? limit 0,1",array($tkdcap2));
-
+							
 							/* Gán dữ liệu */
 							$data = array();
 							$data['stt'] = (int)$stt;

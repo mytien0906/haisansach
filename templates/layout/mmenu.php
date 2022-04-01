@@ -3,7 +3,7 @@
     <div class="title-menu-mobile">MENU</div>
     <ul class="menu_mobile__content">
         <li><a href="" title="TRANG CHỦ">TRANG CHỦ</a></li>
-        <li><a href="gioi-thieu" title="GIỚI THIỆU">GIỚI THIỆU</a></li>
+        <li><a href="gioi-thieu" title="GIỚI THIỆU">GIỚI THIỆsssssU</a></li>
         <li><a href="san-pham" title="SẢN PHẨM">SẢN PHẨM</a>
             <?php if(count($splistmenu)>0) { ?>
             <span class="nav_open_1" id="active_show_menu1_0" data-id="0"><i class="fal fa-angle-down"></i></span>
