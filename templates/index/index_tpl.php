@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!-- San pham moi nhat -->
 <div class="new-product">
     <div class="fixwidth">
@@ -17,23 +13,27 @@ session_start();
                     <a href="<?= $value[$sluglang] ?>" class="image">
                         <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" windown.location.href="<?php $value[$sluglang] ?>" src="/upload/product/<?= $value['photo'] ?>" alt="">
                     </a>
-                    <a href="<?php echo $value['tenkhongdauvi'] ?>">
-                        <h6><?= $value["tenvi"] ?></h6>
-                    </a>
-                    <?php if ($value['motanganvi']) { ?>
-                        <div class="product-des-wrap">
-                            <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
-                            </p>
+                    <div class="info-wrap">
+                        <div class="full-height">
+                        <a href="<?php echo $value['tenkhongdauvi'] ?>">
+                            <h6><?= $value["tenvi"] ?></h6>
+                        </a>
+                        <?php if ($value['motanganvi']) { ?>
+                            <div class="product-des-wrap">
+                                <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
+                                </p>
+                            </div>
+                        <?php } ?>
                         </div>
-                    <?php } ?>
-                    <div class="price">
-                        <div>
-                            <p><?= $func->convertPrice($value['gia']) ?></p>
-                            <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
+                        <div class="price">
+                            <div>
+                                <p><?= $func->convertPrice($value['gia']) ?></p>
+                                <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
+                            </div>
+                            <div class="discount"><?= $value['giakm'] ?>%</div>
                         </div>
-                        <div class="discount"><?= $func->convertPrice($value['giakm']) ?>%</div>
+                        <a class="buy" href="lien-he">Liên hệ</a>
                     </div>
-                    <button class="buy">Liên hệ</button>
                 </div>
             <?php }  ?>
 
@@ -58,23 +58,27 @@ session_start();
                         </a>
                         <img windown.location.href="<?php $value[$sluglang] ?>" class="img-tag" src="/upload/product/ghe-xanh-loai-1_10de2b42-6e90-4228-a574-025c9fe5961d-removebg-preview.png" alt="">
                     </div>
-                    <a href="<?= $value[$sluglang] ?>">
-                        <h6><?= $value["tenvi"] ?></h6>
-                    </a>
-                    <?php if ($value['motanganvi']) { ?>
-                        <div class="product-des-wrap">
-                            <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
-                            </p>
+                    <div class="info-wrap">
+                        <div class="full-height">
+                            <a href="<?= $value[$sluglang] ?>">
+                                <h6><?= $value["tenvi"] ?></h6>
+                            </a>
+                            <?php if ($value['motanganvi']) { ?>
+                                <div class="product-des-wrap">
+                                    <p><?php echo htmlspecialchars_decode($value['motanganvi']) ?>
+                                    </p>
+                                </div>
+                            <?php } ?>
                         </div>
-                    <?php } ?>
-                    <div class="price">
-                        <div>
-                            <p><?= $value['gia'] ?></p>
-                            <p class="price-discount"><?= $value['giamoi'] ?></p>
+                        <div class="price">
+                            <div>
+                                <p><?= $func->convertPrice($value['gia']) ?></p>
+                                <p class="price-discount"><?= $func->convertPrice($value['giamoi']) ?></p>
+                            </div>
+                            <div class="discount"><?= $value['giakm'] ?>%</div>
                         </div>
-                        <div class="discount"><?= $value['giakm'] ?>%</div>
+                        <a class="buy" href="lien-he">Liên hệ</a>
                     </div>
-                    <button class="buy">Liên hệ</button>
                 </div>
             <?php }  ?>
         </div>
@@ -103,7 +107,7 @@ session_start();
                             </div>
                         <?php } ?>
                     </a>
-    
+
                 </div>
             <?php } ?>
         </div>

@@ -18,7 +18,7 @@
 
 
     <div class="tabbed-content">
-        <h3 style="text-transform: capitalize">Khuyến mãi mới nhất</h3>
+        <!-- <h3 style="text-transform: capitalize">Vị trí tuyển dụng</h3> -->
     </div>
     <div class="content-main w-clear">
         <?php if (isset($news) && count($news) > 0) {
@@ -37,31 +37,7 @@
                 </div>
             <?php } ?>
         </div> -->
-            <div class="auto">
-                <?php foreach ($news as $k => $v) { ?>
-                    <div class="cover-content">
-                        <a class="image" href="<?= $v['tenkhongdauvi'] ?>">
-                            <span><img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="<?= THUMBS ?>/380x270x2/<?= UPLOAD_PRODUCT_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" /></span></a>
-                        <a href="<?php echo $v['tenkhongdauvi'] ?>">
-                            <h6><?= $v["tenvi"] ?></h6>
-                        </a>
-                        <?php if ($v['motanganvi']) { ?>
-                            <div class="product-des-wrap">
-                                <p><?php echo htmlspecialchars_decode($v['motanganvi']) ?>
-                                </p>
-                            </div>
-                        <?php } ?>
-                        <div class="price">
-                            <div>
-                                <p><?= $func->convertPrice($v['gia']) ?></p>
-                                <p class="price-discount"><?= $func->convertPrice($v['giamoi']) ?></p>
-                            </div>
-                            <div class="discount"><?= $func->convertPrice($v['giakm']) ?>%</div>
-                        </div>
-                        <button class="add"><span>Thêm</span></button>
-                    </div>
-                <?php } ?>
-            </div>
+           
             <div class="clear"></div>
             <!-- <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
         <?php } else { ?>

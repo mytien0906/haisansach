@@ -69,10 +69,10 @@
     $config['static'][$nametype]['noidung'] = true;
     $config['static'][$nametype]['noidung_cke'] = true;
     /* Đăng ký thẻ thành viên */
-    $nametype = "dang-ky-the-thanh-vien";
-    $config['static'][$nametype]['title_main'] = "Đăng ký thẻ thành viên";
-    $config['static'][$nametype]['noidung'] = true;
-    $config['static'][$nametype]['noidung_cke'] = true;
+    // $nametype = "dang-ky-the-thanh-vien";
+    // $config['static'][$nametype]['title_main'] = "Đăng ký thẻ thành viên";
+    // $config['static'][$nametype]['noidung'] = true;
+    // $config['static'][$nametype]['noidung_cke'] = true;
     /* Chính sách khách hàng thân thiết */
     $nametype = "chinh-sach-khach-hang-than-thiet";
     $config['static'][$nametype]['title_main'] = "Chính sách khách hàng thân thiết";

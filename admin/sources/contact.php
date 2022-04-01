@@ -156,4 +156,3 @@
 		}
 		else $func->transfer("Không nhận được dữ liệu", "index.php?com=contact&act=man&type=".$type."&p=".$curPage, false);
 	}
-?>

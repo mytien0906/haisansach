@@ -53,9 +53,12 @@ $countItems = count($cache->getCache($sql, 'result', 7200));
 /* Get page result */
 $pagingItems = $pagingAjax->getAllPageLinks($countItems, $pageLink, $eShow);
 
+
+
+
 // $namelist = $d->rawQueryOne("select ten$lang from #_product_cat where type = ? and id = ? and hienthi > 0", array('san-pham', $idCat));
 ?>
-<?php if ($countItems) { ?>
+<?php if (isset($countItems)) { ?>
 	<?php foreach ($items as $k => $value) { ?>
 		<div class="col-2 cover-content">
 			<a href="<?= $value[$sluglang] ?>" class="image">
@@ -78,10 +81,15 @@ $pagingItems = $pagingAjax->getAllPageLinks($countItems, $pageLink, $eShow);
 				</div>
 				<div class="discount"><?= $func->convertPrice($value['giakm']) ?>%</div>
 			</div>
-			<button class="buy">Liên hệ</button>
+			<a class="buy" href="lien-he">Liên hệ</a>
 		</div>
 	<?php } ?>
 	<!-- <div class="paging_ajax">
 		<?= $pagingItems ?>
 	</div> -->
-<?php } ?>
+<?php } else { ?>
+	<div class="alert alert-warning" role="alert">
+		<strong><?= khongtimthayketqua ?></strong>
+	</div>
+<?php }
+?>

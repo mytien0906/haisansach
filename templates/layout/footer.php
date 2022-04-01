@@ -17,7 +17,7 @@
                     <a id="goidien" href="tel:<?= preg_replace('/[^0-9]/', '', $optsetting['hotline']); ?>" title="title">
                         <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="upload/photo/icons8-phone.svg" alt="images">
                     </a>
-                    <a href="" class="slogan-text">
+                    <a href="lien-he" class="slogan-text">
                         <h4 class="title">
                             Đơn hàng lớn
                             <br>
