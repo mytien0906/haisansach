@@ -4,7 +4,7 @@
     <?php if (count($news) > 0) {
         // var_dump($news).die();
         ?>
-        <div class="col-md-12">
+        <div class="col-md-12 show-new-page">
             <?php foreach ($news as $k => $v) { ?>
                 <div class="row">
                     <div class="col-md-4">
@@ -25,12 +25,16 @@
             <?php } ?>
         </div>
         <div class="clear"></div>
-        <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
+        <div class="btn-see-more" id="btn_xt">Xem Thêm</div>
+        <!-- <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
     <?php } else { ?>
         <div class="alert alert-warning" role="alert">
             <strong><?= khongtimthayketqua ?></strong>
         </div>
     <?php } ?>
+    <div class="alert alert-warning" role="alert">
+            <strong id="alert_kq"></strong>
+    </div>
 
 </div>
 <?php if ($noidung_page != '') { ?>

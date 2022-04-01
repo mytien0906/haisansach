@@ -149,6 +149,24 @@ echo $js->getJs();
 
 <script type="text/javascript">
     $(document).ready(function() {
+        var page = 1;
+        $('#btn_xt').click(function(){
+            page = page + 1;
+            $.ajax({
+                type: "GET",
+                url: "ajax/ajax_ppage.php",
+                data: {page:page},
+                success: function(data){
+                    if(data.length == 0){
+                        $('#alert_kq').html("Đã xem hết tin tức")
+                        $('#btn_xt').hide();
+                        return;
+                    }
+                    $('.show-new-page').append(data);
+                }
+            });
+        });
+
         jQuery(document).ready(function() {
             jQuery('.catagory-title').on("click", function() {
                 if ($('.catagory-list__fix').css('display') == 'none') {
