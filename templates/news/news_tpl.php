@@ -1,7 +1,6 @@
 <h3 class="tabbed-content title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></h3>
 <div class="row">
     <?php if (count($news) > 0) {
-
     ?>
         <div class="col-md-12 show-new-page">
             <?php foreach ($news as $k => $v) { ?>
@@ -26,8 +25,9 @@
         <div class="load-more" id="btn_xt">
             Xem thêm
         </div>
+
         <div class="clear"></div>
-        <!-- <div class="paging-product"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
+        <!-- <div cladss="paging-product"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div> -->
     <?php } else { ?>
         <div class="alert alert-warning" role="alert">
             <strong><?= khongtimthayketqua ?></strong>

@@ -103,9 +103,9 @@
                             <?php foreach ($criteria_list as $key => $v) { ?>
 
                                 <div class="col-md-3">
-                                    <a href="" class="link-tieu-chi">
+                                    <div class="link-tieu-chi">
                                         <img src="/upload/photo/<?= $v['photo'] ?>" alt="">
-                                    </a>
+                                    </d>
                                 </div>
                             <?php } ?>
                         </div>

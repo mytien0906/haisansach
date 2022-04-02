@@ -33,7 +33,7 @@ $pageLink .= $tempLink;
 $sql = "select ten$lang, tenkhongdauvi, id, photo, gia, giamoi, giakm, type, motangan$lang from #_product where type='san-pham' $where and hienthi > 0 order by stt,id desc";
 $sqlCache = $sql . " limit $start, $pagingAjax->perpage";
 $items = $cache->getCache($sqlCache, 'result', 7200);
-
+$type = $items[0]['type'];
 /* Count all data */
 $countItems = count($cache->getCache($sql, 'result', 7200));
 /* Get page result */
@@ -65,9 +65,6 @@ $pagingItems = $pagingAjax->getAllPageLinks($countItems, $pageLink, $eShow, $idl
 			<a class="buy" href="lien-he">Liên hệ</a>
 		</div>
 	<?php } ?>
-	<div class="paging_ajax">
-		<?= $pagingItems ?>
-	</div>
 <?php } else { ?>
 	<div class="center">
 
@@ -77,3 +74,14 @@ $pagingItems = $pagingAjax->getAllPageLinks($countItems, $pageLink, $eShow, $idl
 	</div>
 <?php }
 ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		jQuery(document).ready(function() {
+			var page = 1;
+			var type = "<?= $com ?>"
+			var idl = "<?= $idl ?>"
+			var idc = "<?= $idc ?>"
+			
+		});
+	});
+</script>

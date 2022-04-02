@@ -120,9 +120,9 @@
             <?php foreach ($criteria_list as $key => $value) { ?>
 
                 <div class="col-md-3">
-                    <a href="<?php $value[$sluglang] ?>" class="link-tieu-chi">
+                    <div class="link-tieu-chi">
                         <img onerror="this.src='<?= THUMBS ?>/380x270x2/assets/images/noimage.png';" src="/upload/photo/<?= $value['photo'] ?>" alt="">
-                    </a>
+                    </div>
                 </div>
             <?php } ?>
         </div>

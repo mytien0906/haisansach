@@ -36683,7 +36683,7 @@ div.menu_mobi, div.menu_mobi_add {
 /* CSS tin tuc 25/03 */
 .pic-news.scale-img img {
     width: 100%;
-    height: 192px !important;
+    height: 220px !important;
     border-radius: 6px;
 }
 
@@ -36935,7 +36935,7 @@ div.menu_mobi, div.menu_mobi_add {
     }
 
     .header .fixwidth {
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
     }
 
     .loadkhung_product {

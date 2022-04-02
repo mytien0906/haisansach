@@ -39,9 +39,11 @@ $idc = ($_GET['idc']);
     </ul>
     <div class="tab-content fixwidth" id="myTabContent">
         <div class="tab-pane fad show active" id="" role="tabpanel" aria-labelledby="">
-            <div class="row list-product d-center">
+            <div class="row list-product d-center show-new-page">
             </div>
-
+            <div class="load-more" id="btn_load_more">
+                Xem thêm
+            </div>
         </div>
     </div>
     <div class="clear"></div>
