@@ -64,6 +64,7 @@ $pagingItems = $pagingAjax->getAllPageLinks($countItems, $pageLink, $eShow, $idl
 			</div>
 			<a class="buy" href="lien-he">Liên hệ</a>
 		</div>
+
 	<?php } ?>
 <?php } else { ?>
 	<div class="center">
@@ -74,14 +75,3 @@ $pagingItems = $pagingAjax->getAllPageLinks($countItems, $pageLink, $eShow, $idl
 	</div>
 <?php }
 ?>
-<script type="text/javascript">
-	$(document).ready(function() {
-		jQuery(document).ready(function() {
-			var page = 1;
-			var type = "<?= $com ?>"
-			var idl = "<?= $idl ?>"
-			var idc = "<?= $idc ?>"
-			
-		});
-	});
-</script>
