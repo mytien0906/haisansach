@@ -36119,7 +36119,7 @@ coccocgrammar {
     white-space: normal;
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     line-height: 25px;
     font-size: 1rem;
 }
@@ -37530,7 +37530,8 @@ a.active.show {
 .center {
     margin: 0px auto;
 }
-
+.desc-news h2{font-size: 16px;}
+.desc-news p{font-size: 15px;}
 /* Tablet responsive */
 @media screen and (max-width:992px) and (min-width:767px) {
     .background-head .frm_timkiem {

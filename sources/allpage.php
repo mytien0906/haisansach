@@ -1,7 +1,6 @@
 <?php
 if (!defined('SOURCES')) die("Error");
 $idl = $_GET['idl'];
-var_dump($idl);
 /* Query allpage */
 $favicon = $d->rawQueryOne("select photo from #_photo where type = ? and act = ? and hienthi > 0 limit 0,1", array('favicon', 'photo_static'));
 $logo = $d->rawQueryOne("select id, photo from #_photo where type = ? and act = ? limit 0,1", array('logo', 'photo_static'));
@@ -27,7 +26,6 @@ $nmlistmenu = $d->rawQuery("select ten$lang, type, tenkhongdau$lang, id,photo fr
 $tht = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo from #_news where type = ? and hienthi > 0 order by stt,id desc", array('thong-tin'));
 // New query
 $splistmenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_list where type = ? and hienthi > 0 order by id asc", array('san-pham'));
-$spcatemenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_cat where type = ? and #_product_cat.id_list = ? and  hienthi > 0 order by stt,id desc", array('san-pham', $idl));
 // var_dump($idl)
 // Lay ra tat ca san pham 
 // $list_all_products = $d->rawQuery("select id, `id_list`,`id_cat`,`noibat`,`photo`,`tenkhongdau$lang`,`motanganvi`,`tenvi`,`gia`,`giakm`,`giamoi`,`type` FROM #_product limit 5");
