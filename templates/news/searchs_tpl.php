@@ -8,7 +8,7 @@
                     <div class="col-md-4">
                         <p class="pic-news scale-img">
                             <a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>">
-                            <img onerror="this.src='<?= THUMBS ?>/320x240x1/assets/images/noimage.png';" src="<?= THUMBS ?>/320x240x1/<?= UPLOAD_NEWS_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>">
+                            <img onerror="this.src='<?= THUMBS ?>/320x240x1/assets/images/noimage.png';" src="/upload/product/<?= $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>">
                             </a>
                         </p>
                     </div>
@@ -17,7 +17,7 @@
                         <div class="info-news">
                             <h3 class="name-news"><a class="text-decoration-none" href="<?= $v[$sluglang] ?>" title="<?= $v['ten' . $lang] ?>"><?= $v['ten' . $lang] ?></a></h3>
                             <p class="time-news"><?= ngaydang ?>: <?= date("d/m/Y h:i A", $v['ngaytao']) ?></p>
-                            <div class="desc-news text-split"><?= $v['mota' . $lang] ?></div>
+                            <div style="font-size: 20px;font-weight: 200;color: #9e0923;" class="desc-news text-split"><?= htmlspecialchars_decode($v['mota' . $lang]) ?></div>
                         </div>
                     </div>
                 </div>

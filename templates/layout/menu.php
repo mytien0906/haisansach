@@ -64,13 +64,13 @@
                                 </a>
                                 <?php if ($splistmenu) { ?>
                                     <ul class="sub-menu-list">
-                                        <?php foreach ($splistmenu as $key => $value) { ?>
+                                        <?php foreach ($splistmenu as $key => $value) {
+                                            $spcatemenu = $d->rawQuery("select ten$lang, tenkhongdau$lang, id,photo,type from #_product_cat where type = ? and #_product_cat.id_list = ? and  hienthi > 0 order by stt,id desc", array('san-pham', $value['id']));
+                                        ?>
+                                            
                                             <li class="sub-menu-item">
-                                                <?php $_SESSION['idl'] = $value['id']
-                                                    ;
-                                                ?>
                                                 <a href="<?= $value[$sluglang] ?>?idl=<?= $value['id'] ?>"><?= $value['ten' . $lang] ?></a>
-                                                <?php if (isset($spcatemenu)) {
+                                                <?php if (isset($spcatemenu) && count($spcatemenu) > 0) {
                                                 ?>
                                                     <ul class="sub-menu-cat">
                                                         <?php foreach ($spcatemenu as $k => $v) { ?>
